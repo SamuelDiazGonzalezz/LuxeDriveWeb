@@ -5,4 +5,4 @@ LuxeDrive es una plataforma web dedicada a la exhibición, gestión y comerciali
 
 El proyecto está diseñado con una arquitectura moderna, priorizando rendimiento, experiencia de usuario (UX) y escalabilidad.
 
-WEB ---->   https://luxedriveweb.onrender.com
+WEB ---->   https://luxedriveweb-1.onrender.com
