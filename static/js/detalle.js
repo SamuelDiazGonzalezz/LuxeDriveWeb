@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             precio: "€285.000",
             tipo: "Deportivo",
             imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
-            descripcion: "El Superdeportivo GT representa la cúspide de la ingeniería automotriz. Con un motor V8 biturbo que genera una potencia brutal de 730 caballos, este vehículo no solo es rápido, es una experiencia de conducción incomparable.",
+            descripcion: "El Superdeportivo GT representa la cúspide de la ingeniería automotriz. Con un motor V8 biturbo que genera una potencia brutal de 730 caballos, cada aceleración es pura adrenalina.",
             specs: [
                 { titulo: "Motor", valor: "V8 Biturbo 4.0L" },
                 { titulo: "Potencia", valor: "730 CV" },
@@ -27,7 +27,80 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Control de tracción y estabilidad avanzado",
                 "Conectividad total con pantallas digitales integradas"
             ]
+        },
+
+        sedan: {
+            nombre: "Sedán Ejecutivo",
+            precio: "€165.000",
+            tipo: "Sedán",
+            imagen: "https://images.unsplash.com/photo-1617814065893-1b1ac19f2f6f",
+            descripcion: "El Sedán Ejecutivo combina elegancia, confort y tecnología de última generación. Diseñado para quienes buscan lujo y sofisticación en cada trayecto.",
+            specs: [
+                { titulo: "Motor", valor: "V6 Turbo 3.0L" },
+                { titulo: "Potencia", valor: "420 CV" },
+                { titulo: "Velocidad Máx.", valor: "280 km/h" },
+                { titulo: "0-100 km/h", valor: "4.5 segundos" },
+                { titulo: "Combustible", valor: "Gasolina Premium" },
+                { titulo: "Año", valor: "2025" }
+            ],
+            caracteristicas: [
+                "Suspensión neumática inteligente",
+                "Asientos ventilados y calefactados",
+                "Sistema multimedia con pantalla 15”",
+                "Asistente de conducción autónoma nivel 3",
+                "Iluminación ambiental personalizable",
+                "Sistema de sonido envolvente premium"
+            ]
+        },
+
+        suv: {
+            nombre: "SUV Premium",
+            precio: "€198.000",
+            tipo: "SUV",
+            imagen: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+            descripcion: "El SUV Premium redefine la versatilidad de lujo. Espacio, potencia y tecnología en un diseño robusto y elegante.",
+            specs: [
+                { titulo: "Motor", valor: "V8 Twin Turbo 4.4L" },
+                { titulo: "Potencia", valor: "600 CV" },
+                { titulo: "Velocidad Máx.", valor: "300 km/h" },
+                { titulo: "0-100 km/h", valor: "3.8 segundos" },
+                { titulo: "Combustible", valor: "Gasolina Premium" },
+                { titulo: "Año", valor: "2026" }
+            ],
+            caracteristicas: [
+                "Tracción integral inteligente AWD",
+                "Sistema Off-Road adaptativo",
+                "Interior de lujo con acabado en madera noble",
+                "Pantallas traseras para pasajeros",
+                "Asistente de aparcamiento automático",
+                "Techo panorámico eléctrico"
+            ]
+        },
+
+        electrico: {
+            nombre: "Eléctrico Premium",
+            precio: "€145.000",
+            tipo: "Eléctrico",
+            imagen: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75",
+            descripcion: "El Eléctrico Premium ofrece rendimiento sostenible sin comprometer el lujo. Tecnología avanzada y autonomía extendida.",
+            specs: [
+                { titulo: "Motor", valor: "Dual Motor Eléctrico" },
+                { titulo: "Potencia", valor: "520 CV" },
+                { titulo: "Autonomía", valor: "620 km" },
+                { titulo: "0-100 km/h", valor: "3.9 segundos" },
+                { titulo: "Batería", valor: "100 kWh" },
+                { titulo: "Año", valor: "2026" }
+            ],
+            caracteristicas: [
+                "Carga rápida 80% en 20 minutos",
+                "Sistema de regeneración inteligente",
+                "Pantalla central curva 17”",
+                "Actualizaciones OTA automáticas",
+                "Modo conducción autónoma avanzada",
+                "Materiales sostenibles premium"
+            ]
         }
+
     };
 
     const coche = coches[id];
