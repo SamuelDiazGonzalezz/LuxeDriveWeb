@@ -1,0 +1,112 @@
+.detalle-wrapper {
+    background: #0b0f19;
+    color: white;
+    padding: 60px 8%;
+    min-height: 100vh;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.detalle-img {
+    position: relative;
+}
+
+.detalle-img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #facc15;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.detalle-info h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: #facc15;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.spec-card {
+    background: #111827;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.spec-title {
+    display: block;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.spec-value {
+    font-weight: bold;
+}
+
+.caract-title {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.caracteristicas li {
+    margin-bottom: 10px;
+    color: #e5e7eb;
+}
+
+.btn-detalle {
+    width: 100%;
+    padding: 15px;
+    background: #facc15;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-detalle:hover {
+    background: #eab308;
+}

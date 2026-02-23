@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle Vehículo - LuxeDrive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="static/css/header.css">
+  <link rel="stylesheet" href="static/css/footer.css">
+  <link rel="stylesheet" href="static/css/detalle.css">
+
+  <script src="xlu-include-file.js"></script>
+</head>
+<body>
+
+<div xlu-include-file="templates/header.html"></div>
+
+<main class="detalle-wrapper">
+
+  <a href="index.html#coleccion" class="back-link">← Volver a Vehículos</a>
+
+  <div class="detalle-grid" id="detalle-container">
+    <!-- Contenido dinámico -->
+  </div>
+
+</main>
+
+<div xlu-include-file="templates/footer.html"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    await xLuIncludeFile();
+  });
+</script>
+
+<script src="static/js/detalle.js"></script>
+
+</body>
+</html>
