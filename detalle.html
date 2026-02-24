@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="static/css/base.css">
-  <link rel="stylesheet" href="static/css/header.css">
-  <link rel="stylesheet" href="static/css/footer.css">
   <link rel="stylesheet" href="static/css/detalle.css">
+  <link rel="stylesheet" href="static/css/footer.css">
 
-  <script src="xlu-include-file.js"></script>
+
+  <script src="static/js/detalle.js"></script>
+
+  </body>
+
 </head>
 <body>
-
-<div xlu-include-file="templates/header.html"></div>
 
 <main class="detalle-wrapper">
 
@@ -25,16 +26,8 @@
   </div>
 
 </main>
-
 <div xlu-include-file="templates/footer.html"></div>
 
 <script src="static/js/script.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    await xLuIncludeFile();  // primero carga header/footer
-  });
-</script>
-<script src="static/js/detalle.js"></script>
-
 </body>
 </html>
