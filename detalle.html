@@ -28,12 +28,12 @@
 
 <div xlu-include-file="templates/footer.html"></div>
 
+<script src="static/js/script.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", async () => {
-    await xLuIncludeFile();
+    await xLuIncludeFile();  // primero carga header/footer
   });
 </script>
-
 <script src="static/js/detalle.js"></script>
 
 </body>
