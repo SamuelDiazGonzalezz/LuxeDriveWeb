@@ -10,20 +10,15 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 
 ### ----> Ejecutar desde WebStorm el index.html
 
-## Funcionalidad del producto
+## Carpetas Documentos PDF
+DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
-El producto software proporciona las funcionalidades necesarias para representar el sitio web de un concesionario de coches de lujo y facilitar la interacción básica con los usuarios.
-De forma general, el sistema deberá permitir:
+Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
 
--Visualizar información corporativa del concesionario, incluyendo presentación y datos de contacto.
+## Requisitos
+<img width="628" height="509" alt="image" src="https://github.com/user-attachments/assets/cade76fd-a40d-46ac-b01f-d1108cfd3acd" />
+<img width="630" height="301" alt="image" src="https://github.com/user-attachments/assets/6ba2aea7-ed25-4d5a-a389-2cc14fe52371" />
 
--Mostrar un catálogo de vehículos de lujo mediante contenidos visuales y descripciones generales.
-
--Permitir la navegación estructurada e intuitiva entre las distintas secciones del sitio web.
-
--Facilitar el contacto del usuario con el concesionario mediante formularios web.
-
-Estas funcionalidades proporcionan una visión clara de la oferta del concesionario y permiten al usuario establecer un primer contacto, cumpliendo los objetivos del producto sin necesidad de funcionalidades avanzadas adicionales.
 
 ## Características principales de la web
 
@@ -45,6 +40,4 @@ Imágenes locales: Todos los vehículos y el logo se cargan desde la carpeta ima
 
 Enlaces universales: Enlaces de cabecera y pie de página .
 
-Estructura del proyecto:
-
-![WhatsApp Image 2026-02-03 at 18 02 36](https://github.com/user-attachments/assets/12c426b7-be28-453f-ba26-066d2aa47f70)
+## Estructura del proyecto:
