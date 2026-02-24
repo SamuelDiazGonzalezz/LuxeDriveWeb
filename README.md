@@ -1,16 +1,28 @@
-# LuxeDriveWeb
+# LuxeDriveWeb <img src="images/logo.jpeg" alt="Logo" width="90"/>
 
-Desarrolladores:
+## Desarrolladores:
+- Aridane Miranda Domínguez
+- Samuel Díaz González
+- Miguel Dario Tovar Navarro
 
+## Descripción
 LuxeDrive es una página web interactiva que simula la experiencia de un concesionario premium de vehículos de lujo. Permite a los usuarios explorar una colección de coches de alta gama, conocer sus características y consultar detalles individuales de cada modelo. La web está diseñada con un enfoque moderno, responsivo y atractivo, usando HTML, CSS y JavaScript puro.
 
-Características principales
+### ----> Ejecutar desde WebStorm el index.html
 
-******* Ejecutar desde WebStorm el index.html *******
+## Carpeta "Documentos PDF"
+DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
+
+Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
+
+## Requisitos
+<img width="550" height="425" alt="image" src="https://github.com/user-attachments/assets/99c4ec51-8cc0-45b9-9282-7e8312f28fab" />
+<img width="550" height="301" alt="image" src="https://github.com/user-attachments/assets/6ba2aea7-ed25-4d5a-a389-2cc14fe52371" />
+
+
+## Características principales de la web
 
 Navegación dinámica: Cabecera y pie de página reutilizables en todas las secciones y páginas mediante carga dinámica de plantillas (xLuIncludeFile()).
-
-Secciones de la página principal:
 
 Hero: Imagen destacada con mensaje de bienvenida.
 
@@ -26,8 +38,6 @@ Interactividad: Animaciones al hacer scroll, menú responsive y alertas al envia
 
 Imágenes locales: Todos los vehículos y el logo se cargan desde la carpeta images del proyecto, facilitando la personalización.
 
-Enlaces universales: Los enlaces de cabecera y pie de página funcionan en cualquier página del proyecto.
+Enlaces universales: Enlaces de cabecera y pie de página .
 
-Estructura del proyecto:
-
-![WhatsApp Image 2026-02-03 at 18 02 36](https://github.com/user-attachments/assets/12c426b7-be28-453f-ba26-066d2aa47f70)
+## Estructura del proyecto:
