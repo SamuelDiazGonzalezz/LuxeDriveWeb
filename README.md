@@ -10,7 +10,7 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 
 ### ----> Ejecutar desde WebStorm el index.html
 
-## Carpetas Documentos PDF
+## Carpeta "Documentos PDF"
 DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
 Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
