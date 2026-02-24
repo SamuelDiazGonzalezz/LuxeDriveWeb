@@ -16,8 +16,8 @@ DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requ
 Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
 
 ## Requisitos
-<img width="628" height="509" alt="image" src="https://github.com/user-attachments/assets/cade76fd-a40d-46ac-b01f-d1108cfd3acd" />
-<img width="630" height="301" alt="image" src="https://github.com/user-attachments/assets/6ba2aea7-ed25-4d5a-a389-2cc14fe52371" />
+<img width="550" height="425" alt="image" src="https://github.com/user-attachments/assets/99c4ec51-8cc0-45b9-9282-7e8312f28fab" />
+<img width="550" height="301" alt="image" src="https://github.com/user-attachments/assets/6ba2aea7-ed25-4d5a-a389-2cc14fe52371" />
 
 
 ## Características principales de la web
