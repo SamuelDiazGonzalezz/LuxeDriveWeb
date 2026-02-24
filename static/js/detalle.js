@@ -138,8 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li>✔ ${c}</li>
                 `).join("")}
             </ul>
-
-            <button class="btn-detalle" id="buyNow">🛒 Comprar ahora</button>
+            <a href="pagos.html" class="btn-card">🛒 Comprar ahora</a>
+             
+          
         </div>
     `;
 });
