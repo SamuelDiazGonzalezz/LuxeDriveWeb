@@ -79,7 +79,23 @@ html {
     margin-bottom: 30px;
     line-height: 1.6;
 }
+/* Botón centrado debajo del texto */
+.hero-content .btn {
+    text-decoration: none; /* quita subrayado */
+    color: #000;           /* texto negro */
+    background-color: #f5b400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block;        /* para que margin auto funcione */
+    font-weight: bold;
+    margin: 20px auto 0 auto; /* 20px arriba, auto a los lados para centrar */
+    text-align: center;    /* opcional, asegura que el texto del botón esté centrado */
+    transition: background-color 0.3s;
+}
 
+.hero-content .btn:hover {
+    background-color: #e0a800;
+}
 /* Responsive */
 @media(max-width: 768px) {
     .hero-content h1 {
