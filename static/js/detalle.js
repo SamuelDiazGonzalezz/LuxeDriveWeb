@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `).join("")}
             </ul>
 
-            <button class="btn-detalle" id="buyNow">🛒 Comprar ahora</button>
+            <button class="btn-detalle">🛒 Comprar ahora</button>
         </div>
     `;
 });
