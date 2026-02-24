@@ -6,6 +6,8 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 
 Características principales
 
+******* Ejecutar desde WebStorm el index.html *******
+
 Navegación dinámica: Cabecera y pie de página reutilizables en todas las secciones y páginas mediante carga dinámica de plantillas (xLuIncludeFile()).
 
 Secciones de la página principal:
