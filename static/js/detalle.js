@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: "Superdeportivo GT",
             precio: "€285.000",
             tipo: "Deportivo",
-            imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+            imagen: "images/gt.jpg" ,
             descripcion: "El Superdeportivo GT representa la cúspide de la ingeniería automotriz. Con un motor V8 biturbo que genera una potencia brutal de 730 caballos, cada aceleración es pura adrenalina.",
             specs: [
                 { titulo: "Motor", valor: "V8 Biturbo 4.0L" },
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: "Sedán Ejecutivo",
             precio: "€165.000",
             tipo: "Sedán",
-            imagen: "https://images.unsplash.com/photo-1617814065893-1b1ac19f2f6f",
+            imagen: "images/sedan.jpeg",
             descripcion: "El Sedán Ejecutivo combina elegancia, confort y tecnología de última generación. Diseñado para quienes buscan lujo y sofisticación en cada trayecto.",
             specs: [
                 { titulo: "Motor", valor: "V6 Turbo 3.0L" },
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: "SUV Premium",
             precio: "€198.000",
             tipo: "SUV",
-            imagen: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+            imagen: "images/suv.jpg",
             descripcion: "El SUV Premium redefine la versatilidad de lujo. Espacio, potencia y tecnología en un diseño robusto y elegante.",
             specs: [
                 { titulo: "Motor", valor: "V8 Twin Turbo 4.4L" },
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: "Eléctrico Premium",
             precio: "€145.000",
             tipo: "Eléctrico",
-            imagen: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75",
+            imagen: "images/electrico.jpg",
             descripcion: "El Eléctrico Premium ofrece rendimiento sostenible sin comprometer el lujo. Tecnología avanzada y autonomía extendida.",
             specs: [
                 { titulo: "Motor", valor: "Dual Motor Eléctrico" },
@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("detalle-container");
 
     container.innerHTML = `
-        <div class="detalle-img">
-            <span class="badge">${coche.tipo}</span>
-            <img src="${coche.imagen}" alt="">
-        </div>
+    <div class="detalle-img">
+        <span class="badge">${coche.tipo}</span>
+        <img src="${coche.imagen}" alt="${coche.nombre}">
+    </div>
 
         <div class="detalle-info">
             <h1>${coche.nombre}</h1>
