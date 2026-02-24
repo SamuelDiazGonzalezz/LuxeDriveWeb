@@ -14,18 +14,28 @@ header {
     padding: 15px 8%;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #f5b400;
+/* Logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
 }
 
+.navbar .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Menú centrado */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    margin-left: auto;   /* empuja a la derecha */
+    margin-right: auto;  /* empuja a la izquierda */
 }
 
+/* Links */
 .nav-links a {
     text-decoration: none;
     color: #ddd;
