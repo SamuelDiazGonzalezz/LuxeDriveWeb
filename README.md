@@ -41,3 +41,30 @@ Imágenes locales: Todos los vehículos y el logo se cargan desde la carpeta ima
 Enlaces universales: Enlaces de cabecera y pie de página .
 
 ## Estructura del proyecto:
+
+LuxeDriveWeb
+│ 
+├─static
+│   ├─ /css
+│   │   ├─ base.css           # Estilos globales del home (portada, sobre nosotros, colecciones y contacto)
+│   │   ├─ detalle.css        # Estilos específicos para la página detalle.html
+│   │   ├─ footer.css         # Estilos del footer
+│   │   ├─ header.css         # Estilos del header
+│   │   ├─ informacion.css    # Estilos de la página informacion.html
+│   │   └─ pagos.css          # Estilos de la página pagos.html
+│   │
+│   ├─ /js
+│       ├─ detalle.js         # Lógica de detalle de coches, carga dinámica de la página
+│       ├─ informacion.js     # Lógica de formulario de información personal y resumen
+│       ├─ pagos.js           # Lógica del pago y resumen de pedido dinámico
+│       └─ script.js          # Script general (posiblemente global)
+│   
+├─templates
+│    ├─ base.html             # template del home con las portada, sobre nosotros, colecciones y contacto
+│    ├─ header.html           # Sección del encabezado
+│    └─footer.html            # Sección del pie de página
+│ 
+├─ detalle.html              # Página de detalle de cada coche
+├─ index.html                # Página principal que carga los templates header-base-footer
+├─ informacion.html          # Página de formulario de información del comprador
+└─ pagos.html                # Página de pago y resumen final
