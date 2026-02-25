@@ -32,7 +32,7 @@ Flujo de la web:
 
 index.html → home que carga los templates header, base (contiene los apartados  portada, contactos, colección y sobre nosotros) y footer.
 
-detalle.html → pagina de detalles de un coche (dinámico por ID).
+detalle.html → pagina de detalles de un coche (dinámico por ID) y cargando el template del footer.
 
 informacion.html → página de formulario de datos del comprador, validación de campos.
 
