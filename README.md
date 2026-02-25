@@ -10,7 +10,7 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 
 ### ----> Ejecutar desde WebStorm el index.html
 ## Enlace a los mockups en Figma 
--> https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=T3q0igQogViRcPRk-1
+-> [https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=T3q0igQogViRcPRk-1](https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=4h9R8C8I6HcmXmTZ-1)
 ## Carpeta "Documentos PDF"
 DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
