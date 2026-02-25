@@ -22,25 +22,21 @@ Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
 
 ## Características principales de la web
 
-Navegación dinámica: Cabecera y pie de página reutilizables en todas las secciones y páginas mediante carga dinámica de plantillas (xLuIncludeFile()).
+CSS: Cada página tiene su propio archivo CSS además de base.css para estilos generales.
 
-Hero: Imagen destacada con mensaje de bienvenida.
+JS: Scripts por página (detalle.js, informacion.js, pagos.js) y un script general (script.js).
 
-Sobre nosotros: Información sobre la empresa y sus valores.
+Templates HTML: Estructura modular con base, header y footer para reutilización, y páginas funcionales (detalle, informacion, pagos, index).
 
-Colección de vehículos: Muestra coches de lujo con tipo, imagen, precio y botón para ver detalles.
+Flujo de la web:
 
-Contacto: Formulario de contacto.
+index.html → home que carga los templates header, base (contiene los apartados  portada, contactos, colección y sobre nosotros) y footer.
 
-Páginas de detalle: Cada coche tiene su propia página con información ampliada, imagen principal, especificaciones y características.
+detalle.html → pagina de detalles de un coche (dinámico por ID).
 
-Interactividad: Animaciones al hacer scroll, menú responsive y alertas al enviar formularios.
+informacion.html → página de formulario de datos del comprador, validación de campos.
 
-Imágenes locales: Todos los vehículos y el logo se cargan desde la carpeta images del proyecto, facilitando la personalización.
-
-Enlaces universales: Enlaces de cabecera y pie de página .
-
-## Estructura del proyecto:
+pagos.html → página de pago y resumen final, datos del coche cargados desde localStorage.:
 
 <img width="367" height="621" alt="image" src="https://github.com/user-attachments/assets/4e9b43b9-53b3-4376-b382-4a2b6049d00a" />
 
