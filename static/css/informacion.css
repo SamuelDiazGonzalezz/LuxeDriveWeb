@@ -113,6 +113,8 @@ input, select {
 input::placeholder { color: #555; }
 
 .btn {
+    text-decoration: none;
+    color: #000;
     width: 100%;
     padding: 14px;
     background: #f4a000;

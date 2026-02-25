@@ -133,9 +133,14 @@ input {
 }
 
 .product img {
-    width: 80px;
-    border-radius: 8px;
+    width: 80px;       /* ancho fijo */
+    height: auto;      /* mantiene proporción */
+    object-fit: contain;
+    border-radius: 5px;
 }
+.product-info { display: flex; flex-direction: column; }
+
+.product-category { color: var(--text-muted); font-size: 0.8rem; }
 
 .summary-item {
     display: flex;

@@ -5,19 +5,21 @@
     <title>Pago | LuxeDrive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="static/css/informacion.css">
     <link rel="stylesheet" href="static/css/pagos.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
 
-    <a href="index.html" class="back">← Volver al inicio</a>
+    <a href="informacion.html" class="back">← Volver a información</a>
     <h1>Finalizar compra</h1>
 
     <div class="steps">
-        <div class="step completed">
-            <div class="circle">1</div>
+        <div class="step active">
+            <div class="circle active">1</div>
             <span>Información</span>
         </div>
 
@@ -64,39 +66,40 @@
             </form>
         </div>
 
-        <!-- RESUMEN -->
-        <div class="card summary">
+        <!--  RESUMEN DINÁMICO -->
+        <aside class="summary-section">
+            <h3>Resumen del Pedido</h3>
 
-            <h2>Resumen del Pedido</h2>
-
-            <div class="product">
-                <img src="img/car.jpg" alt="Superdeportivo">
-                <div>
-                    <h4>Superdeportivo GT</h4>
-                    <p>Deportivo</p>
+            <div class="product-item">
+                <img id="product-img" src="" alt="">
+                <div class="product-info">
+                    <span class="product-name"></span>
+                    <span class="product-category"></span>
+                    <span class="product-price"></span>
                 </div>
             </div>
 
-            <div class="summary-item">
+            <hr>
+
+            <div class="summary-row">
                 <span>Subtotal</span>
-                <span>€285.000</span>
+                <span id="subtotal"></span>
             </div>
 
-            <div class="summary-item">
+            <div class="summary-row">
                 <span>IVA (21%)</span>
-                <span>€59.850</span>
+                <span id="iva"></span>
             </div>
 
-            <div class="summary-item total">
+            <div class="summary-row total">
                 <span>Total</span>
-                <span>€344.850</span>
+                <span class="total-price" id="total"></span>
             </div>
-
-        </div>
+        </aside>
 
     </div>
 </div>
 
-<script src="pagos.js"></script>
+<script src="static/js/pagos.js"></script>
 </body>
 </html>

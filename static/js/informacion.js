@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Información cargada");
 
     const cocheJSON = localStorage.getItem("cocheSeleccionado");
 
@@ -41,4 +40,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (ivaEl) ivaEl.textContent = "€" + iva.toLocaleString("es-ES");
     if (totalEl) totalEl.textContent = "€" + total.toLocaleString("es-ES");
 
+});
+document.getElementById("info-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // evitar que el formulario se envíe por defecto
+
+    // Validación HTML nativa ya funciona por "required", pero podemos reforzar
+    const form = e.target;
+    if (!form.checkValidity()) {
+        form.reportValidity(); // muestra mensajes de campos obligatorios
+        return;
+    }
+
+    // Guardar información del usuario si quieres (opcional)
+    const infoUsuario = {
+        nombre: form.nombre.value,
+        apellidos: form.apellidos.value,
+        email: form.email.value,
+        telefono: form.telefono.value,
+        direccion: form.direccion.value,
+        ciudad: form.ciudad.value,
+        codigo_postal: form.codigo_postal.value,
+        pais: form.pais.value
+    };
+    localStorage.setItem("infoUsuario", JSON.stringify(infoUsuario));
+
+    // Redirigir a la página de pago
+    window.location.href = "pagos.html";
 });

@@ -30,47 +30,48 @@
             <div class="form-row">
                 <div class="form-group">
                     <label>Nombre *</label>
-                    <input type="text" placeholder="Juan" required>
+                    <input type="text" name="nombre" placeholder="Juan" required>
                 </div>
                 <div class="form-group">
                     <label>Apellidos *</label>
-                    <input type="text" placeholder="García" required>
+                    <input type="text" name="apellidos" placeholder="García" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label>Email *</label>
-                <input type="email" placeholder="juan@email.com" required>
+                <input type="email" name="email" placeholder="juan@email.com" required>
             </div>
 
             <div class="form-group">
                 <label>Teléfono *</label>
-                <input type="tel" placeholder="+34 600 000 000" required>
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" required>
             </div>
 
             <div class="form-group">
                 <label>Dirección *</label>
-                <input type="text" placeholder="Calle Principal 123" required>
+                <input type="text" name="direccion" placeholder="Calle Principal 123" required>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label>Ciudad *</label>
-                    <input type="text" placeholder="Madrid" required>
+                    <input type="text" name="ciudad" placeholder="Madrid" required>
                 </div>
                 <div class="form-group">
                     <label>Código Postal *</label>
-                    <input type="text" placeholder="28001" required>
+                    <input type="text" name="codigo_postal" placeholder="28001" required>
                 </div>
                 <div class="form-group">
                     <label>País *</label>
-                    <select required>
+                    <select name="pais" required>
                         <option value="ES">España</option>
                     </select>
                 </div>
             </div>
 
-            <a href="pagos.html" class="btn">Continuar al Pago</a>
+            <!-- BOTÓN DE SUBMIT EN LUGAR DEL ENLACE -->
+            <button type="submit" class="btn">Continuar al Pago</button>
         </form>
 
         <!--  RESUMEN DINÁMICO -->

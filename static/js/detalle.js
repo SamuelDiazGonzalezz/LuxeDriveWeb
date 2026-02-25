@@ -48,6 +48,54 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Pantalla 15”",
                 "Conducción autónoma nivel 3"
             ]
+        },
+
+        suv: {
+            nombre: "SUV Premium",
+            precio: "€198.000",
+            tipo: "SUV",
+            imagen: "images/suv.jpg",
+            descripcion: "El SUV Premium redefine la versatilidad de lujo. Espacio, potencia y tecnología en un diseño robusto y elegante.",
+            specs: [
+                { titulo: "Motor", valor: "V8 Twin Turbo 4.4L" },
+                { titulo: "Potencia", valor: "600 CV" },
+                { titulo: "Velocidad Máx.", valor: "300 km/h" },
+                { titulo: "0-100 km/h", valor: "3.8 segundos" },
+                { titulo: "Combustible", valor: "Gasolina Premium" },
+                { titulo: "Año", valor: "2026" }
+            ],
+            caracteristicas: [
+                "Tracción integral inteligente AWD",
+                "Sistema Off-Road adaptativo",
+                "Interior de lujo con acabado en madera noble",
+                "Pantallas traseras para pasajeros",
+                "Asistente de aparcamiento automático",
+                "Techo panorámico eléctrico"
+            ]
+        },
+
+        electrico: {
+            nombre: "Eléctrico Premium",
+            precio: "€145.000",
+            tipo: "Eléctrico",
+            imagen: "images/electrico.jpg",
+            descripcion: "El Eléctrico Premium ofrece rendimiento sostenible sin comprometer el lujo. Tecnología avanzada y autonomía extendida.",
+            specs: [
+                { titulo: "Motor", valor: "Dual Motor Eléctrico" },
+                { titulo: "Potencia", valor: "520 CV" },
+                { titulo: "Autonomía", valor: "620 km" },
+                { titulo: "0-100 km/h", valor: "3.9 segundos" },
+                { titulo: "Batería", valor: "100 kWh" },
+                { titulo: "Año", valor: "2026" }
+            ],
+            caracteristicas: [
+                "Carga rápida 80% en 20 minutos",
+                "Sistema de regeneración inteligente",
+                "Pantalla central curva 17”",
+                "Actualizaciones OTA automáticas",
+                "Modo conducción autónoma avanzada",
+                "Materiales sostenibles premium"
+            ]
         }
         // Puedes dejar los demás igual
     };
