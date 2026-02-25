@@ -1,0 +1,175 @@
+:root {
+    --bg-color: #000000;
+    --card-bg: #1a1f2b;
+    --input-bg: #242b38;
+    --accent-color: #d49100; /* Dorado */
+    --text-main: #ffffff;
+    --text-muted: #8a92a3;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.back {
+    color: #aaa;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+h1 { font-size: 2rem; margin-top: 10px; }
+
+/* Pasos */
+.steps-container {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    justify-content: flex-start;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step.active .step-number {
+    background: var(--accent-color);
+    color: black;
+}
+
+.step-line {
+    width: 100px;
+    height: 1px;
+    background: #333;
+    margin: 0 15px;
+}
+
+/* Layout Principal */
+.checkout-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.info-section, .summary-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* Formulario */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background: var(--input-bg);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box;
+}
+
+input::placeholder { color: #555; }
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #f4a000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: #b87e00; }
+
+/* Resumen */
+.product-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.product-item img { border-radius: 6px; object-fit: cover; }
+
+.product-info { display: flex; flex-direction: column; }
+
+.product-category { color: var(--text-muted); font-size: 0.8rem; }
+
+.product-price { color: var(--accent-color); font-weight: bold; margin-top: 4px; }
+
+hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.summary-row.total {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.total-price { color: var(--accent-color); }
+
+/* Contenedor de producto en resumen */
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre imagen y info */
+}
+
+/* Imagen del coche en resumen */
+.product-item img {
+    width: 80px;       /* ancho fijo */
+    height: auto;       /* altura proporcional */
+    object-fit: contain; /* mantiene proporción, no recorta */
+    border-radius: 5px; /* opcional, bordes redondeados */
+}

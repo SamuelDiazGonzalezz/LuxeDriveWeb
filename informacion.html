@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Información</title>
+    <link rel="stylesheet" href="static/css/informacion.css">
 </head>
 <body>
+<div class="container">
+    <a href="index.html" class="back">← Volver al inicio</a>
+    <h1>Finalizar compra</h1>
 
+    <div class="steps-container">
+        <div class="step active">
+            <span class="step-number">1</span>
+            <span class="step-label">Información</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <span class="step-number">2</span>
+            <span class="step-label">Pago</span>
+        </div>
+    </div>
+
+    <div class="checkout-content">
+        <form id="info-form" class="info-section">
+            <h2>Información Personal</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nombre *</label>
+                    <input type="text" placeholder="Juan" required>
+                </div>
+                <div class="form-group">
+                    <label>Apellidos *</label>
+                    <input type="text" placeholder="García" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" placeholder="juan@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono *</label>
+                <input type="tel" placeholder="+34 600 000 000" required>
+            </div>
+
+            <div class="form-group">
+                <label>Dirección *</label>
+                <input type="text" placeholder="Calle Principal 123" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ciudad *</label>
+                    <input type="text" placeholder="Madrid" required>
+                </div>
+                <div class="form-group">
+                    <label>Código Postal *</label>
+                    <input type="text" placeholder="28001" required>
+                </div>
+                <div class="form-group">
+                    <label>País *</label>
+                    <select required>
+                        <option value="ES">España</option>
+                    </select>
+                </div>
+            </div>
+
+            <a href="pagos.html" class="btn">Continuar al Pago</a>
+        </form>
+
+        <!--  RESUMEN DINÁMICO -->
+        <aside class="summary-section">
+            <h3>Resumen del Pedido</h3>
+
+            <div class="product-item">
+                <img id="product-img" src="" alt="">
+                <div class="product-info">
+                    <span class="product-name"></span>
+                    <span class="product-category"></span>
+                    <span class="product-price"></span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal"></span>
+            </div>
+
+            <div class="summary-row">
+                <span>IVA (21%)</span>
+                <span id="iva"></span>
+            </div>
+
+            <div class="summary-row total">
+                <span>Total</span>
+                <span class="total-price" id="total"></span>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<script src="static/js/informacion.js"></script>
 </body>
 </html>
