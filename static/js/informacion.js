@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 document.getElementById("info-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // evitar que el formulario se envíe por defecto
+    e.preventDefault();
 
     // Validación HTML nativa ya funciona por "required", pero podemos reforzar
     const form = e.target;
     if (!form.checkValidity()) {
-        form.reportValidity(); // muestra mensajes de campos obligatorios
+        form.reportValidity();
         return;
     }
 

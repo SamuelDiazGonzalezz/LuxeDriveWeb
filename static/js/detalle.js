@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Materiales sostenibles premium"
             ]
         }
-        // Puedes dejar los demás igual
+
     };
 
     const coche = coches[id];
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
 
-    // 🔥 AHORA SÍ FUNCIONA
+
     const btnComprar = document.getElementById("btn-comprar");
 
     btnComprar.addEventListener("click", () => {

@@ -161,17 +161,17 @@ hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
 
 .total-price { color: var(--accent-color); }
 
-/* Contenedor de producto en resumen */
+
 .product-item {
     display: flex;
     align-items: center;
-    gap: 10px; /* espacio entre imagen y info */
+    gap: 10px;
 }
 
-/* Imagen del coche en resumen */
+
 .product-item img {
-    width: 80px;       /* ancho fijo */
-    height: auto;       /* altura proporcional */
-    object-fit: contain; /* mantiene proporción, no recorta */
-    border-radius: 5px; /* opcional, bordes redondeados */
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
 }
