@@ -41,3 +41,8 @@ pagos.html → página de pago y resumen final, datos del coche cargados desde l
 
 <img width="367" height="621" alt="image" src="https://github.com/user-attachments/assets/4e9b43b9-53b3-4376-b382-4a2b6049d00a" />
 
+## Trello
+
+<img width="1133" height="524" alt="image" src="https://github.com/user-attachments/assets/c1c62ea8-951e-44c6-9482-fef13f16be0a" />
+
+
