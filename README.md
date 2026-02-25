@@ -9,7 +9,8 @@
 LuxeDrive es una página web interactiva que simula la experiencia de un concesionario premium de vehículos de lujo. Permite a los usuarios explorar una colección de coches de alta gama, conocer sus características y consultar detalles individuales de cada modelo. La web está diseñada con un enfoque moderno, responsivo y atractivo, usando HTML, CSS y JavaScript puro.
 
 ### ----> Ejecutar desde WebStorm el index.html
-
+## Enlace a los mockups en Figma 
+-> https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=T3q0igQogViRcPRk-1
 ## Carpeta "Documentos PDF"
 DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
