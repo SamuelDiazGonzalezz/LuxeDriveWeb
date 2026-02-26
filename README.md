@@ -14,7 +14,7 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 ## Carpeta "Documentos PDF"
 DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
-Mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups y storyboard
+Mockups_41.4.pdf  -> Documento pdf con los mockups de figma.
 
 ## Requisitos
 <img width="550" height="425" alt="image" src="https://github.com/user-attachments/assets/99c4ec51-8cc0-45b9-9282-7e8312f28fab" />
@@ -40,4 +40,9 @@ informacion.html → página de formulario de datos del comprador, validación d
 pagos.html → página de pago y resumen final, datos del coche cargados desde localStorage.:
 
 <img width="367" height="621" alt="image" src="https://github.com/user-attachments/assets/4e9b43b9-53b3-4376-b382-4a2b6049d00a" />
+
+## Trello
+
+<img width="1133" height="524" alt="image" src="https://github.com/user-attachments/assets/c1c62ea8-951e-44c6-9482-fef13f16be0a" />
+
 
