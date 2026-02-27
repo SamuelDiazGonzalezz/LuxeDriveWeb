@@ -14,7 +14,7 @@ LuxeDrive es una página web interactiva que simula la experiencia de un concesi
 ## Carpeta "Documentos PDF"
 DOCUMENTO DE REQUISITOS LUXEDRIVEWEB 41.4.pdf  ->   Documento formal de los requisitos del software.
 
-Mockups_41.4.pdf  -> Documento pdf con los mockups de figma.
+mockups_storyboard_41.4.pdf  -> Documento pdf con los mockups de figma y el storyboard.
 
 ## Requisitos
 <img width="550" height="425" alt="image" src="https://github.com/user-attachments/assets/99c4ec51-8cc0-45b9-9282-7e8312f28fab" />
@@ -31,13 +31,13 @@ Templates HTML: Estructura modular con base, header y footer para reutilización
 
 Flujo de la web:
 
-index.html → home que carga los templates header, base (contiene los apartados  portada, contactos, colección y sobre nosotros) y footer.
+index.html → home que carga los templates header.html, base.html (contiene los apartados  portada, contactos, colección y sobre nosotros) y footer.html.
 
-detalle.html → pagina de detalles de un coche (dinámico por ID) y cargando el template del footer.
+detalle.html → pagina de detalles de un coche (dinámico por ID) y cargando el template del footer.html.
 
 informacion.html → página de formulario de datos del comprador, validación de campos.
 
-pagos.html → página de pago y resumen final, datos del coche cargados desde localStorage.:
+pagos.html → página de pago y resumen final, datos del coche cargados desde localStorage pasados del informacion.html.:
 
 <img width="367" height="621" alt="image" src="https://github.com/user-attachments/assets/4e9b43b9-53b3-4376-b382-4a2b6049d00a" />
 
