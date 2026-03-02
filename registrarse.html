@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LuxeDrive - Registro</title>
+    <link rel="stylesheet" href="static/css/registrarse.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="back-link">
+    ← Volver
+</div>
+
+<div class="register-container">
+
+    <h1 class="logo">LuxeDrive</h1>
+    <p class="subtitle">Crea tu cuenta</p>
+
+    <form id="registerForm">
+
+        <div class="input-group">
+            <label>Nombre Completo</label>
+            <div class="input-wrapper">
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Juan García" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <div class="input-wrapper">
+                <span class="icon">✉</span>
+                <input type="email" placeholder="tu@email.com" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Contraseña</label>
+            <div class="input-wrapper">
+                <span class="icon">🔒</span>
+                <input type="password" id="password" placeholder="••••••••" required>
+                <span class="toggle-password" onclick="togglePassword('password')">👁</span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Confirmar Contraseña</label>
+            <div class="input-wrapper">
+                <span class="icon">🔒</span>
+                <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁</span>
+            </div>
+        </div>
+
+        <button type="submit" class="register-btn">Registrarse</button>
+
+    </form>
+
+    <p class="login-text">
+        ¿Ya tienes cuenta? <span class="login-link">Inicia sesión</span>
+    </p>
+
+</div>
+
+
+</body>
+</html>
