@@ -1,66 +1,74 @@
-// login.js
-// Módulo de autenticación en Vanilla JS
-
 const Auth = (() => {
 
-    const DATA_URL = "data.json";
+    const API_URL = "http://localhost:3000/users";
     const STORAGE_KEY = "currentUser";
 
-    let users = [];
-
     /* ==============================
-       CARGA DE USUARIOS
+       LOGIN CONTRA JSON SERVER
     ============================== */
 
-    async function loadUsers() {
+    async function login(email, password) {
         try {
-            const response = await fetch(DATA_URL);
-            const data = await response.json();
-            users = data.users || [];
+
+            const response = await fetch(
+                `${API_URL}?email=${email}&password=${password}`
+            );
+
+            const users = await response.json();
+
+            if (users.length > 0) {
+                const user = users[0];
+                saveSession(user);
+                return { success: true, user };
+            }
+
+            return { success: false };
+
         } catch (error) {
-            console.error("Error cargando usuarios:", error);
+            console.error("Error en login:", error);
+            return { success: false };
         }
     }
 
     /* ==============================
-       VALIDACIÓN
+       REGISTRO (POST)
     ============================== */
 
-    function validateCredentials(username, password) {
-        return users.find(
-            user =>
-                user.username === username &&
-                user.password === password
-        );
-    }
+    async function register(name, email, password) {
 
-    /* ==============================
-       LOGIN
-    ============================== */
+        try {
 
-    async function login(username, password) {
+            // Verificar si el email ya existe
+            const check = await fetch(`${API_URL}?email=${email}`);
+            const existing = await check.json();
 
-        if (users.length === 0) {
-            await loadUsers();
+            if (existing.length > 0) {
+                return { success: false, message: "El email ya está registrado" };
+            }
+
+            const newUser = {
+                name,
+                email,
+                password,
+                role: "client"
+            };
+
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newUser)
+            });
+
+            const createdUser = await response.json();
+
+            saveSession(createdUser);
+
+            return { success: true };
+
+        } catch (error) {
+            console.error("Error en registro:", error);
+            return { success: false };
         }
-
-        const user = validateCredentials(username, password);
-
-        if (user) {
-            saveSession(user);
-            return { success: true, user };
-        }
-
-        return { success: false };
-    }
-
-    /* ==============================
-       LOGOUT
-    ============================== */
-
-    function logout() {
-        localStorage.removeItem(STORAGE_KEY);
-        window.location.href = "index.html";
     }
 
     /* ==============================
@@ -69,6 +77,11 @@ const Auth = (() => {
 
     function saveSession(user) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    }
+
+    function logout() {
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.href = "login.html";
     }
 
     function getCurrentUser() {
@@ -80,10 +93,6 @@ const Auth = (() => {
         return getCurrentUser() !== null;
     }
 
-    /* ==============================
-       PROTEGER PÁGINAS
-    ============================== */
-
     function requireAuth() {
         if (!isAuthenticated()) {
             window.location.href = "login.html";
@@ -91,19 +100,7 @@ const Auth = (() => {
     }
 
     /* ==============================
-       CONTROL DE ROLES (opcional)
-    ============================== */
-
-    function requireRole(role) {
-        const user = getCurrentUser();
-
-        if (!user || user.role !== role) {
-            window.location.href = "index.html";
-        }
-    }
-
-    /* ==============================
-       EVENT LISTENER DEL FORM
+       FORM LOGIN
     ============================== */
 
     function initLoginForm() {
@@ -114,10 +111,10 @@ const Auth = (() => {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
 
-            const result = await login(username, password);
+            const result = await login(email, password);
 
             if (result.success) {
                 window.location.href = "index.html";
@@ -128,28 +125,53 @@ const Auth = (() => {
     }
 
     /* ==============================
-       INICIALIZACIÓN
+       FORM REGISTRO
     ============================== */
+
+    function initRegisterForm() {
+
+        const form = document.getElementById("registerForm");
+        if (!form) return;
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const name = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden");
+                return;
+            }
+
+            const result = await register(name, email, password);
+
+            if (result.success) {
+                window.location.href = "index.html";
+            } else {
+                alert(result.message || "Error en el registro");
+            }
+        });
+    }
 
     function init() {
         initLoginForm();
+        initRegisterForm();
     }
 
     return {
         init,
         login,
+        register,
         logout,
-        isAuthenticated,
-        getCurrentUser,
         requireAuth,
-        requireRole
+        isAuthenticated,
+        getCurrentUser
     };
 
 })();
-
-/* ==============================
-   AUTO-INICIO
-============================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     Auth.init();

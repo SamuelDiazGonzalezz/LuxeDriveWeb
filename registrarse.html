@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<div class="back-link">
-    ← Volver
-</div>
+<div href="index.html" class="back-link">← Volver</div>
 
 <div class="register-container">
 
@@ -58,11 +56,19 @@
     </form>
 
     <p class="login-text">
-        ¿Ya tienes cuenta? <span class="login-link">Inicia sesión</span>
+        ¿Ya tienes cuenta?
+        <a href="login.html" class="login-link">Inicia sesión</a>
     </p>
 
 </div>
 
+<script src="static/js/login.js"></script>
 
+<script>
+    function togglePassword(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+    }
+</script>
 </body>
 </html>
