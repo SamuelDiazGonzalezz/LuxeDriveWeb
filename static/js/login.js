@@ -4,12 +4,32 @@ const Auth = (() => {
     const SESSION_KEY = "luxedrive_current_user";
 
     /* ==============================
-       OBTENER USUARIOS
+       CARGAR USUARIOS
     ============================== */
 
-    function getUsers() {
-        const users = localStorage.getItem(USERS_KEY);
-        return users ? JSON.parse(users) : [];
+    async function getUsers() {
+
+        let users = localStorage.getItem(USERS_KEY);
+
+        if (users) {
+            return JSON.parse(users);
+        }
+
+        // cargar desde users.json si no hay datos
+        try {
+
+            const response = await fetch("users.json");
+            const data = await response.json();
+
+            saveUsers(data);
+
+            return data;
+
+        } catch (error) {
+
+            console.error("Error cargando users.json:", error);
+            return [];
+        }
     }
 
     function saveUsers(users) {
@@ -20,9 +40,9 @@ const Auth = (() => {
        LOGIN
     ============================== */
 
-    function login(email, password) {
+    async function login(email, password) {
 
-        const users = getUsers();
+        const users = await getUsers();
 
         const user = users.find(
             u => u.email === email && u.password === password
@@ -31,8 +51,8 @@ const Auth = (() => {
         if (user) {
 
             user.last_login = new Date().toISOString();
-            saveUsers(users);
 
+            saveUsers(users);
             saveSession(user);
 
             return { success: true, user };
@@ -45,9 +65,9 @@ const Auth = (() => {
        REGISTER
     ============================== */
 
-    function register(name, email, password) {
+    async function register(name, email, password) {
 
-        const users = getUsers();
+        const users = await getUsers();
 
         const exists = users.find(u => u.email === email);
 
@@ -66,8 +86,8 @@ const Auth = (() => {
         };
 
         users.push(newUser);
-        saveUsers(users);
 
+        saveUsers(users);
         saveSession(newUser);
 
         return { success: true };
@@ -87,7 +107,9 @@ const Auth = (() => {
     }
 
     function getCurrentUser() {
+
         const user = localStorage.getItem(SESSION_KEY);
+
         return user ? JSON.parse(user) : null;
     }
 
@@ -96,6 +118,7 @@ const Auth = (() => {
     }
 
     function requireAuth() {
+
         if (!isAuthenticated()) {
             window.location.href = "login.html";
         }
@@ -110,14 +133,14 @@ const Auth = (() => {
         const form = document.getElementById("loginForm");
         if (!form) return;
 
-        form.addEventListener("submit", (e) => {
+        form.addEventListener("submit", async (e) => {
 
             e.preventDefault();
 
             const email = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
 
-            const result = login(email, password);
+            const result = await login(email, password);
 
             if (result.success) {
                 window.location.href = "index.html";
@@ -136,7 +159,7 @@ const Auth = (() => {
         const form = document.getElementById("registerForm");
         if (!form) return;
 
-        form.addEventListener("submit", (e) => {
+        form.addEventListener("submit", async (e) => {
 
             e.preventDefault();
 
@@ -150,7 +173,7 @@ const Auth = (() => {
                 return;
             }
 
-            const result = register(name, email, password);
+            const result = await register(name, email, password);
 
             if (result.success) {
                 window.location.href = "index.html";
@@ -159,6 +182,10 @@ const Auth = (() => {
             }
         });
     }
+
+    /* ==============================
+       INIT
+    ============================== */
 
     function init() {
         initLoginForm();

@@ -1,107 +1,244 @@
-header {
-    position: relative; /* baja con la página */
+/* =========================
+   HEADER
+========================= */
+
+.header {
     width: 100%;
-    background-color: rgba(0,0,0,0.95);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    z-index: auto; /* opcional */
+    background-color: #000;
+    border-bottom: 1px solid #1f1f1f;
+    position: relative;
+    z-index: 1000;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: 155px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 340px 1fr 280px;
     align-items: center;
-    padding: 15px 8%;
 }
 
-/* Logo */
-.navbar .logo {
+/* =========================
+   LOGO
+========================= */
+
+.logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;   /* lo mueve a la derecha */
+    margin-top: 60px;
 }
 
-.navbar .logo-img {
-    height: 70px;
+.logo img {
+    display: block;
+    height: 200px;
     width: auto;
     object-fit: contain;
 }
 
-/* Menú centrado */
+/* =========================
+   NAVEGACIÓN
+========================= */
+
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 30px;
-    margin-left: auto;   /* empuja a la derecha */
-    margin-right: auto;  /* empuja a la izquierda */
+    align-items: center;
+    justify-content: center;
 }
 
-/* Links */
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .nav-links a {
+    display: inline-block;
+    color: #ffffff;
     text-decoration: none;
-    color: #ddd;
-    transition: 0.3s;
+    font-size: 24px;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding: 0 6px;
 }
 
 .nav-links a:hover {
     color: #f5b400;
 }
 
+/* =========================
+   ZONA USUARIO
+========================= */
+
+.user-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+    padding-right: 40px;
+    height: 100px;
+}
+
+.login-btn,
+.logout-btn {
+    background: transparent;
+    border: 1px solid #f5b400;
+    color: #f5b400;
+    padding: 10px 40px;
+    margin-top: -320px;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+    background-color: #f5b400;
+    color: #000;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.username {
+    color: #f5b400;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* =========================
+   BOTÓN MENÚ MÓVIL
+========================= */
+
 .menu-toggle {
     display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
 }
 
-@media(max-width: 768px) {
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+    .header-container {
+        grid-template-columns: 240px 1fr 240px;
+        padding: 0 20px;
+        min-height: 120px;
+    }
+
+    .logo img {
+        height: 115px;
+    }
+
+    .nav-links ul {
+        gap: 32px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+
+    }
+
+    .user-area {
+        padding-right: 15px;
+    }
+
+    .login-btn,
+    .logout-btn {
+        padding: 12px 22px;
+        font-size: 16px;
+    }
+
+    .username {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 16px;
+        min-height: auto;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .user-area {
+        order: 2;
+        justify-content: flex-end;
+        width: auto;
+        padding-right: 0;
+    }
+
     .nav-links {
-        position: absolute;
-        top: 70px;
-        right: -100%;
-        flex-direction: column;
-        background: #000;
-        width: 200px;
-        padding: 20px;
-        transition: 0.3s;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 100px;
+
     }
 
-    .nav-links.active {
-        right: 0;
+    .nav-links ul {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
     }
 
-    .menu-toggle {
-        display: block;
+    .nav-links a {
+        font-size: 16px;
+        letter-spacing: 0.5px;
     }
-}
-.user-area{
-    display:flex;
-    align-items:center;
-}
 
-.login-btn{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    padding:8px 14px;
-    border:1px solid white;
-    border-radius:6px;
-}
+    .logo img {
+        height: 85px;
+    }
 
-.login-btn:hover{
-    background:white;
-    color:black;
-}
-
-.user-profile{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.profile-icon{
-    width:100px;
-    padding: 30px;
-}
-
-.username{
-    color:yellow;
-    width:60px;
+    .login-btn,
+    .logout-btn {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
 }
