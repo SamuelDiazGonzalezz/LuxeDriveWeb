@@ -1,5 +1,5 @@
 // ================================
-// FUNCIÓN DEL PROFESOR (NO TOCAR)
+// FUNCIONES
 // ================================
 async function xLuIncludeFile() {
     let z = document.getElementsByTagName("*");
@@ -30,28 +30,58 @@ async function xLuIncludeFile() {
     }
 }
 
+function updateNavbarUser() {
+    const userArea = document.getElementById("userArea");
+    if (!userArea) return; // Header aún no cargado
+
+    const user = localStorage.getItem("luxedrive_current_user");
+
+    if (!user) {
+        userArea.innerHTML = `
+            <a href="./login.html" class="login-btn">Iniciar sesión</a>
+        `;
+    } else {
+        const parsedUser = JSON.parse(user);
+
+        userArea.innerHTML = `
+            <div class="user-profile">
+                <img src="images/perfil.png" class="profile-icon" alt="Perfil">
+                <span class="username">${parsedUser.name}</span>
+                <button class="logout-btn">Cerrar sesión</button>
+            </div>
+        `;
+
+        // Evento cerrar sesión
+        const logoutBtn = userArea.querySelector(".logout-btn");
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("luxedrive_current_user");
+            updateNavbarUser(); // Volver a mostrar "Iniciar sesión"
+        });
+    }
+}
 
 // ================================
-// INICIALIZACIÓN GENERAL
+// INICIALIZACIÓN
 // ================================
 document.addEventListener("DOMContentLoaded", async () => {
 
-    // Cargar templates primero
+    // 1️⃣ Cargar templates
     await xLuIncludeFile();
 
-    // MENÚ RESPONSIVE
+    // 2️⃣ Actualizar usuario en navbar
+    updateNavbarUser();
+
+    // 3️⃣ Menú responsive
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => {
             navLinks.classList.toggle("active");
         });
     }
 
-    // ANIMACIÓN SCROLL
+    // 4️⃣ Animación scroll
     const sections = document.querySelectorAll(".section");
-
     sections.forEach(sec => {
         sec.style.opacity = "0";
         sec.style.transform = "translateY(40px)";
@@ -60,7 +90,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function reveal() {
         const trigger = window.innerHeight * 0.85;
-
         sections.forEach(sec => {
             const top = sec.getBoundingClientRect().top;
             if (top < trigger) {
@@ -73,34 +102,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.addEventListener("scroll", reveal);
     reveal();
 
-    // FORMULARIO
+    // 5️⃣ Formularios
     const form = document.querySelector("form");
     if (form) {
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", function(e){
             e.preventDefault();
             alert("Mensaje enviado correctamente 🚗✨");
             form.reset();
         });
     }
-
-});
-document.addEventListener("DOMContentLoaded", async () => {
-
-    await xLuIncludeFile();
-
-    // Scroll manual para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const target = document.querySelector(this.getAttribute("href"));
-
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
 
 });
