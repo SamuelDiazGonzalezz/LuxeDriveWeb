@@ -91,6 +91,7 @@ html {
     margin: 20px auto 0 auto;
     text-align: center;
     transition: background-color 0.3s;
+    margin-bottom: 170px;
 }
 
 .hero-content .btn:hover {
@@ -104,6 +105,7 @@ html {
     .hero-content {
         left: 5%;
         right: 5%;
+        margin-top: 150px;
     }
 }
 /* CONTACTO */
