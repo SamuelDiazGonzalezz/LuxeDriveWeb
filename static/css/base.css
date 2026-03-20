@@ -184,11 +184,13 @@ html {
     align-items: center;
 }
 
+/* Imagen */
 .sobre-img img {
     width: 100%;
     border-radius: 15px;
 }
 
+/* Texto */
 .sobre-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -208,6 +210,18 @@ html {
     background: #f5b400;
     padding: 10px;
     border-radius: 10px;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 20px;                  /* Ajusta el espacio si quieres */
+    }
+
+    .sobre-img {
+        order: -1; /* Mueve la imagen arriba */
+    }
 }
 
 /* COLECCIÓN */
