@@ -71,14 +71,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2️⃣ Actualizar usuario en navbar
     updateNavbarUser();
 
-    // 3️⃣ Menú responsive
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    }
+    // 3️⃣ MENÚ LATERAL (versión PRO con delegación)
+    document.addEventListener("click", (e) => {
+
+        const navLinks = document.querySelector(".nav-links");
+        const overlay = document.querySelector(".nav-overlay");
+
+        // Abrir / cerrar con botón
+        if (e.target.id === "menu-toggle") {
+            if (navLinks) navLinks.classList.toggle("active");
+            if (overlay) overlay.classList.toggle("active");
+        }
+
+        // Cerrar al hacer click fuera (overlay)
+        if (overlay && e.target === overlay) {
+            navLinks.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        // 🔥 Cerrar al hacer click en enlaces
+        if (e.target.closest(".nav-links a")) {
+            if (navLinks) navLinks.classList.remove("active");
+            if (overlay) overlay.classList.remove("active");
+        }
+    });
 
     // 4️⃣ Animación scroll
     const sections = document.querySelectorAll(".section");

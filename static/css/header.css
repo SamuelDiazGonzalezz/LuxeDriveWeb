@@ -199,97 +199,120 @@
    RESPONSIVE TABLET
 ========================= */
 
-@media (max-width: 992px) {
-    .header-container {
-        grid-template-columns: 200px 1fr 220px;
-        padding: 16px 20px;
-        min-height: 95px;
-        column-gap: 16px;
-    }
-
-    .logo img {
-        height: 78px;
-    }
-
-    .nav-links ul {
-        gap: 24px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-        letter-spacing: 0.3px;
-    }
-
-    .login-btn,
-    .logout-btn {
-        padding: 7px 14px;
-        font-size: 14px;
-    }
-
-    .username {
-        font-size: 14px;
-    }
-}
-
-/* =========================
-   RESPONSIVE MÓVIL
-========================= */
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .header-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 12px 16px;
-        gap: 10px;
+        position: relative;
     }
 
-    /* LOGO */
-    .logo {
-        order: 1;
-        margin: 0; /* quitamos el -400px */
-    }
-
-    .logo img {
-        height: 55px;
-        margin: 0;
-    }
-
-    /* USUARIO */
-    .user-area {
-        order: 2;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 8px;
-    }
+    /* BOTÓN MENÚ a la izquierda */
     .menu-toggle {
         display: block;
         position: absolute;
         top: 15px;
-        right: 16px;
+        left: 16px; /* pegado esquina izquierda */
         font-size: 26px;
         background: none;
         border: none;
         color: #f5b400;
         cursor: pointer;
-        z-index: 3000;
+        z-index: 5000;
     }
-    /* NAV (oculto si usas menú hamburguesa) */
-    .nav-links {
-        display: none;
+    .logo {
+        position: absolute;
+        margin-top: -20px;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* BOTONES */
+    .logo img {
+        height: 75px;
+        width: auto;
+        display: block;
+        max-width: 100%;
+    }
+
+    /* USUARIO a la derecha */
+    .user-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-left: auto;
+        order: 2;
+    }
+
+    /* MENÚ LATERAL IZQUIERDA */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -300px; /* oculto fuera de la pantalla a la izquierda */
+        width: 300px;  /* ancho lateral */
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 5000;
+    }
+
+    .nav-links.active {
+        left: 0; /* se desliza desde la izquierda */
+    }
+
+    /* overlay */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 4000; /* debajo del menú */
+    }
+
+    .nav-overlay.active {
+        display: block;
+    }
+
+    /* LINKS del menú lateral */
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        color: #fff;
+        display: block;
+        padding: 10px 0;
+        text-decoration: none;
+    }
+
+    /* BOTONES LOGIN/LOGOUT */
     .login-btn,
     .logout-btn {
         padding: 5px 10px;
         font-size: 12px;
         margin: 0;
+        background: transparent;
+        border: 1px solid #f5b400;
+        color: #f5b400;
+        border-radius: 8px;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
     }
-
-
 
     /* AVATAR */
     .user-icon,
@@ -306,6 +329,100 @@
 
     .header {
         position: relative;
+        z-index: 1000;
+    }
+}
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER CON MÁS BASE NEGRA */
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 16px 40px 16px; /* más espacio abajo */
+        position: relative;
+        background-color: #000;
+        min-height: 150px;
     }
 
+    /* BOTÓN MENÚ a la izquierda */
+    .menu-toggle {
+        position: absolute;
+        top: 20px;
+        left: 16px;
+        font-size: 26px;
+        background: none;
+        border: none;
+        color: #f5b400;
+        cursor: pointer;
+        z-index: 2000; /* menos que el logo */
+    }
+
+
+    .logo {
+        position: absolute;
+        margin-top: -20px;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo img {
+        height: 75px;
+        width: auto;
+        display: block;
+        max-width: 100%;
+    }
+
+    /* USUARIO a la derecha */
+    .user-area {
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        z-index: 1500; /* por debajo del logo, encima del header */
+    }
+
+    /* MENÚ LATERAL IZQUIERDO */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 1000; /* por debajo del logo */
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* overlay */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 900; /* por debajo del logo y menú */
+    }
+
+    .nav-overlay.active {
+        display: block;
+    }
 }
