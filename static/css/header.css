@@ -205,8 +205,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 16px;
+        padding: 20px 16px 40px 16px;
         position: relative;
+        background-color: #000;
+        min-height: 150px;
     }
 
     /* BOTÓN MENÚ a la izquierda */
@@ -256,11 +258,11 @@
         top: 0;
         left: -300px; /* oculto fuera de la pantalla a la izquierda */
         width: 300px;  /* ancho lateral */
-        height: 100vh;
+        height: 150vh;
         background-color: #000;
         display: flex;
         flex-direction: column;
-        padding: 100px 20px 20px;
+        padding: 10000px 20px 20px;
         transition: left 0.3s ease;
         z-index: 5000;
     }
@@ -335,15 +337,14 @@
 /* =========================
    RESPONSIVE MÓVIL
 ========================= */
+@media (max-width: 900px) {
 
-@media (max-width: 768px) {
 
-    /* HEADER CON MÁS BASE NEGRA */
     .header-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 16px 40px 16px; /* más espacio abajo */
+        padding: 20px 16px 40px 16px;
         position: relative;
         background-color: #000;
         min-height: 150px;
@@ -351,24 +352,24 @@
 
     /* BOTÓN MENÚ a la izquierda */
     .menu-toggle {
+        display: block;
         position: absolute;
-        top: 20px;
-        left: 16px;
+        top: 15px;
+        left: 16px; /* pegado esquina izquierda */
         font-size: 26px;
         background: none;
         border: none;
         color: #f5b400;
         cursor: pointer;
-        z-index: 2000; /* menos que el logo */
+        z-index: 9999;
     }
-
 
     .logo {
         position: absolute;
         margin-top: -20px;
-        left: 45%;
+        left: 15%;
         transform: translate(-50%, -50%);
-        z-index: 9999;
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -381,14 +382,50 @@
         max-width: 100%;
     }
 
-    /* USUARIO a la derecha */
+    /* USER AREA (columna) */
     .user-area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        max-width: 140px;
+        z-index: 2000;
+    }
+
+    /* BOTÓN LOGOUT arriba */
+    .logout-btn {
+        order: 1;
+        width: 100%;
+        font-size: 12px;
+        padding: 6px 8px;
+        margin: 0;
+    }
+
+    /* PERFIL debajo */
+    .user-profile {
         order: 2;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        gap: 8px;
-        z-index: 1500; /* por debajo del logo, encima del header */
+        gap: 6px;
+    }
+
+
+    .user-icon img,
+    .user-profile img,
+    .user-area img {
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 0 !important;
+    }
+
+
+    .username {
+        font-size: 12px;
+        color: #f5b400;
+        margin: 0 !important;
+        white-space: nowrap;
     }
 
     /* MENÚ LATERAL IZQUIERDO */
@@ -396,14 +433,15 @@
         position: fixed;
         top: 0;
         left: -300px;
-        width: 300px;
+        width: 250px;
         height: 100vh;
         background-color: #000;
         display: flex;
         flex-direction: column;
-        padding: 100px 20px 20px;
+        padding: 30px 20px 20px;
         transition: left 0.3s ease;
-        z-index: 1000; /* por debajo del logo */
+        z-index: 9999;
+        margin-top: 0;
     }
 
     .nav-links.active {
@@ -419,7 +457,7 @@
         height: 100%;
         background: rgba(0,0,0,0.5);
         display: none;
-        z-index: 900; /* por debajo del logo y menú */
+        z-index: 9999;
     }
 
     .nav-overlay.active {
