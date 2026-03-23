@@ -110,3 +110,14 @@
 .btn-detalle:hover {
     background: #eab308;
 }
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .detalle-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px;                  /* Ajusta espacio si quieres */
+    }
+
+    .detalle-img {
+        order: -1; /* Mueve la imagen arriba */
+    }
+}
