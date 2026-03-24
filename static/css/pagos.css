@@ -159,4 +159,7 @@ input {
     .grid {
         grid-template-columns: 1fr;
     }
+    .summary-section {
+        order: -1; /* Mueve el resumen arriba del formulario */
+    }
 }

@@ -91,19 +91,21 @@ html {
     margin: 20px auto 0 auto;
     text-align: center;
     transition: background-color 0.3s;
+    margin-bottom: 170px;
 }
 
 .hero-content .btn:hover {
     background-color: #e0a800;
 }
 /* Responsive */
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     .hero-content h1 {
         font-size: 2rem;
     }
     .hero-content {
         left: 5%;
         right: 5%;
+        margin-top: 150px;
     }
 }
 /* CONTACTO */
@@ -182,11 +184,13 @@ html {
     align-items: center;
 }
 
+/* Imagen */
 .sobre-img img {
     width: 100%;
     border-radius: 15px;
 }
 
+/* Texto */
 .sobre-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -206,6 +210,18 @@ html {
     background: #f5b400;
     padding: 10px;
     border-radius: 10px;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 20px;                  /* Ajusta el espacio si quieres */
+    }
+
+    .sobre-img {
+        order: -1; /* Mueve la imagen arriba */
+    }
 }
 
 /* COLECCIÓN */

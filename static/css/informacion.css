@@ -175,3 +175,15 @@ hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
     object-fit: contain;
     border-radius: 5px;
 }
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .checkout-content {
+        display: grid;
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 20px; /* Ajusta espacio */
+    }
+
+    .summary-section {
+        order: -1; /* Mueve el resumen arriba del formulario */
+    }
+}
