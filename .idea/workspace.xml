@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd48ff3f-fb1c-41d4-befc-eaffd5c6e460" name="Changes" comment="Migración a Angular" />
+    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/luxedrive-angular/src/app/firebase.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luxedrive-angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luxedrive-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Sprint2" />
+        <entry key="$PROJECT_DIR$" value="sprint3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,6 +67,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier",
     "settings.editor.selected.configurable": "consents",
     "ts.external.directory.path": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -92,7 +98,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cd48ff3f-fb1c-41d4-befc-eaffd5c6e460" name="Changes" comment="" />
+      <changelist id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="" />
       <created>1772480313839</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -106,6 +112,7 @@
       <workItem from="1775500314356" duration="7000" />
       <workItem from="1775500387710" duration="2068000" />
       <workItem from="1775579818415" duration="1331000" />
+      <workItem from="1775581673015" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
