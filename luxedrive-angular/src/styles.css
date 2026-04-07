@@ -1,0 +1,36 @@
+@import './styles/base.css';
+@import './styles/header.css';
+@import './styles/footer.css';
+@import './styles/detalle.css';
+@import './styles/informacion.css';
+@import './styles/login.css';
+@import './styles/registrarse.css';
+@import './styles/pagos.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.main-shell {
+  min-height: 100vh;
+}
+
+.error-text {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.auth-page,
+.checkout-page {
+  min-height: 100vh;
+}
+
+.admin-link {
+  margin-left: 1rem;
+  font-weight: 600;
+}
