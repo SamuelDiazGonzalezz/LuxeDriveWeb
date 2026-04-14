@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/luxedrive-angular/src/app/firebase.config.ts" afterDir="false" />
+    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="Actualizacion firebase y archivos firebase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luxedrive-angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luxedrive-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luxedrive-angular/src/app/services/vehicle.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/src/app/services/vehicle.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,28 +50,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "sprint3",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "consents",
-    "ts.external.directory.path": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint3&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;consents&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\migue\WebstormProjects\LuxeDriveWeb\luxedrive-angular" />
@@ -112,7 +111,9 @@
       <workItem from="1775500314356" duration="7000" />
       <workItem from="1775500387710" duration="2068000" />
       <workItem from="1775579818415" duration="1331000" />
-      <workItem from="1775581673015" duration="844000" />
+      <workItem from="1775581673015" duration="2723000" />
+      <workItem from="1775671959556" duration="212000" />
+      <workItem from="1776103474266" duration="3698000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
@@ -154,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775580887753</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Actualizacion firebase y archivos firebase">
+      <option name="closed" value="true" />
+      <created>1775582677827</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1775582677827</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +220,7 @@
     <MESSAGE value="Cambios en la página detalle.js y creación del .json" />
     <MESSAGE value="Cambios en la página detalle y creación del .json" />
     <MESSAGE value="Migración a Angular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migración a Angular" />
+    <MESSAGE value="Actualizacion firebase y archivos firebase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion firebase y archivos firebase" />
   </component>
 </project>
