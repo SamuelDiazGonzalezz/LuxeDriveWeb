@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="Actualizacion firebase y archivos firebase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luxedrive-angular/src/app/services/vehicle.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/luxedrive-angular/src/app/services/vehicle.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuxeDriveAngular-fixed/src/app/firebase.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/LuxeDriveAngular-fixed/src/app/firebase.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +35,12 @@
     &quot;assignee&quot;: &quot;MiguelTovar23-gif&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/SamuelDiazGonzalezz/LuxeDriveWeb.git&quot;,
-    &quot;accountId&quot;: &quot;dbf396cf-ffcd-4c1b-8d81-ea41b19cbe21&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SamuelDiazGonzalezz/LuxeDriveWeb.git",
+    "accountId": "45dfd795-2780-4552-bff6-1dd18bcfeeec"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -50,28 +49,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sprint3&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;consents&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "sprint3",
+    "javascript.preferred.runtime.type.id": "node",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "consents",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\migue\WebstormProjects\LuxeDriveWeb\luxedrive-angular" />
@@ -114,6 +113,7 @@
       <workItem from="1775581673015" duration="2723000" />
       <workItem from="1775671959556" duration="212000" />
       <workItem from="1776103474266" duration="3698000" />
+      <workItem from="1776181371312" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
@@ -222,5 +222,16 @@
     <MESSAGE value="Migración a Angular" />
     <MESSAGE value="Actualizacion firebase y archivos firebase" />
     <option name="LAST_COMMIT_MESSAGE" value="Actualizacion firebase y archivos firebase" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/LuxeDriveAngular-fixed/src/app/firebase.config.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

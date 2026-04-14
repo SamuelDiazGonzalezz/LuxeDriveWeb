@@ -1,19 +1,17 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getDatabase } from 'firebase/database';
-import { getStorage } from 'firebase/storage';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'TU_API_KEY',
-  authDomain: 'TU_PROYECTO.firebaseapp.com',
-  databaseURL: 'https://TU_PROYECTO-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'TU_PROYECTO',
-  storageBucket: 'TU_PROYECTO.firebasestorage.app',
-  messagingSenderId: 'TU_SENDER_ID',
-  appId: 'TU_APP_ID',
+  apiKey: "AIzaSyDBrbwV12sVKRhNzOKnO0Ke3mbhlrhNLUA",
+  authDomain: "luxedrive-341b0.firebaseapp.com",
+  projectId: "luxedrive-341b0",
+  storageBucket: "luxedrive-341b0.firebasestorage.app",
+  messagingSenderId: "421121846074",
+  appId: "1:421121846074:web:70a222ec01069499047e03"
 };
 
-export const firebaseApp = initializeApp(firebaseConfig);
-export const auth = getAuth(firebaseApp);
-export const db = getDatabase(firebaseApp);
-export const storage = getStorage(firebaseApp);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
