@@ -23,8 +23,8 @@ export class HeaderComponent {
     this.menuOpen = false;
   }
 
-  logout(): void {
-    this.auth.logout();
+  async logout(): Promise<void> {
+    await this.auth.logout();
     this.closeMenu();
     void this.router.navigate(['/']);
   }

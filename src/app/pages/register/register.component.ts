@@ -26,6 +26,7 @@ export class RegisterComponent {
   showPassword = false;
   showConfirmPassword = false;
   errorMessage = '';
+  isSubmitting = false;
 
   form = this.fb.group(
     {
@@ -38,20 +39,28 @@ export class RegisterComponent {
   );
 
   async submit(): Promise<void> {
+    this.errorMessage = '';
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    const { name, email, password } = this.form.getRawValue();
-    const result = await this.authService.register(name, email, password);
+    this.isSubmitting = true;
 
-    if (!result.success) {
-      this.errorMessage = result.message ?? 'No se pudo registrar el usuario';
-      return;
+    try {
+      const { name, email, password } = this.form.getRawValue();
+      const result = await this.authService.register(name ?? '', email ?? '', password ?? '');
+
+      if (!result.success) {
+        this.errorMessage = result.message ?? 'No se pudo registrar el usuario';
+        return;
+      }
+
+      const redirectTo = this.route.snapshot.queryParamMap.get('redirectTo') || '/';
+      void this.router.navigateByUrl(redirectTo);
+    } finally {
+      this.isSubmitting = false;
     }
-
-    const redirectTo = this.route.snapshot.queryParamMap.get('redirectTo') || '/';
-    void this.router.navigateByUrl(redirectTo);
   }
 }

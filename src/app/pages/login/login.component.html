@@ -1,38 +1,41 @@
 <div class="auth-page">
-  <a routerLink="/" class="back-link">← Volver al inicio</a>
+  <a routerLink="/" class="back-link">&larr; Volver al inicio</a>
 
   <div class="login-container">
     <h1 class="logo">LuxeDrive</h1>
-    <p class="subtitle">Inicia sesión en tu cuenta</p>
+    <p class="subtitle">Inicia sesion en tu cuenta</p>
 
     <form id="loginForm" [formGroup]="form" (ngSubmit)="submit()">
       <div class="input-group">
         <label>Email</label>
         <div class="input-wrapper">
-          <span class="icon">✉</span>
+          <span class="icon">&#9993;</span>
           <input type="email" placeholder="tu@email.com" formControlName="email">
         </div>
-        <div class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">Introduce un email válido.</div>
+        <div class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">Introduce un email valido.</div>
       </div>
 
       <div class="input-group">
-        <label>Contraseña</label>
+        <label>Contrasena</label>
         <div class="input-wrapper">
-          <span class="icon">🔒</span>
+          <span class="icon">&#128274;</span>
           <input [type]="showPassword ? 'text' : 'password'" placeholder="••••••••" formControlName="password">
-          <button type="button" class="toggle-password" (click)="showPassword = !showPassword">👁</button>
+          <button type="button" class="toggle-password" (click)="showPassword = !showPassword">&#128065;</button>
         </div>
-        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.invalid">La contraseña es obligatoria.</div>
+        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">La contrasena es obligatoria.</div>
+        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">La contrasena debe tener al menos 6 caracteres.</div>
       </div>
 
-      <button type="submit" class="login-btn">Iniciar Sesión</button>
+      <button type="submit" class="login-btn" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Entrando...' : 'Iniciar sesion' }}
+      </button>
       <div class="error-text" *ngIf="errorMessage">{{ errorMessage }}</div>
     </form>
 
     <p class="register-text">
-      ¿No tienes cuenta? <a routerLink="/register" class="register-link">Regístrate</a>
+      ¿No tienes cuenta? <a routerLink="/register" class="register-link">Registrate</a>
     </p>
 
-    <div class="demo-box">✨🚗✨</div>
+    <div class="demo-box">LuxeDrive</div>
   </div>
 </div>

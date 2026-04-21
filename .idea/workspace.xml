@@ -6,32 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="v20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.config.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.routes.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/app/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/main.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuxeDriveWeb-angular/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/firebase.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/firebase.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/guards/auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="76" />
+    <option name="cachedIndexableFilesCount" value="78" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -81,29 +65,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sprint3&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;consents&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Usuario\\WebstormProjects\\LuxeDriveWebAngular\\LuxeDriveAngular-fixed\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "sprint3",
+    "javascript.preferred.runtime.type.id": "node",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\migue\\WebstormProjects\\LuxeDriveWeb\\luxedrive-angular\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "consents",
+    "ts.external.directory.path": "C:\\Users\\Usuario\\WebstormProjects\\LuxeDriveWebAngular\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\WebstormProjects\LuxeDriveWebAngular" />
@@ -163,6 +147,7 @@
       <workItem from="1776190019632" duration="28000" />
       <workItem from="1776709700278" duration="45000" />
       <workItem from="1776767688020" duration="572000" />
+      <workItem from="1776768297822" duration="4340000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
@@ -220,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776767929766</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v20">
+      <option name="closed" value="true" />
+      <created>1776768651160</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776768651160</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

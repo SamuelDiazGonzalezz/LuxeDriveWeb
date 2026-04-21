@@ -19,6 +19,7 @@ export class LoginComponent {
 
   showPassword = false;
   errorMessage = '';
+  isSubmitting = false;
 
   form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
@@ -26,20 +27,28 @@ export class LoginComponent {
   });
 
   async submit(): Promise<void> {
+    this.errorMessage = '';
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    const { email, password } = this.form.getRawValue();
-    const result = await this.authService.login(email, password);
+    this.isSubmitting = true;
 
-    if (!result.success) {
-      this.errorMessage = result.message ?? 'No se pudo iniciar sesión';
-      return;
+    try {
+      const { email, password } = this.form.getRawValue();
+      const result = await this.authService.login(email, password);
+
+      if (!result.success) {
+        this.errorMessage = result.message ?? 'No se pudo iniciar sesion';
+        return;
+      }
+
+      const redirectTo = this.route.snapshot.queryParamMap.get('redirectTo') || '/';
+      void this.router.navigateByUrl(redirectTo);
+    } finally {
+      this.isSubmitting = false;
     }
-
-    const redirectTo = this.route.snapshot.queryParamMap.get('redirectTo') || '/';
-    void this.router.navigateByUrl(redirectTo);
   }
 }
