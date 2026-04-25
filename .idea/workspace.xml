@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/vehicle-detail/vehicle-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/vehicle-detail/vehicle-detail.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/vehicle.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/vehicle.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/data/coches.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/coches.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="76" />
+    <option name="cachedIndexableFilesCount" value="80" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
