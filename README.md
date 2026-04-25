@@ -1,79 +1,78 @@
-# LuxeDriveWeb <img src="images/logo.jpeg" alt="Logo" width="90"/>
+# LuxeDriveWeb3 🏎️💨
 
-## Desarrolladores:
-- Aridane Miranda Domínguez
-- Samuel Díaz González
-- Miguel Dario Tovar Navarro
+LuxeDriveWeb3 es una plataforma web moderna desarrollada con **Angular** para la gestión, visualización y adquisición de vehículos de lujo. El proyecto ofrece una experiencia de usuario premium con un flujo de compra completo, autenticación de usuarios y una interfaz responsiva, con carga de datos dinámica desde la firestore.
 
-## Descripción
-LuxeDrive es una página web interactiva que simula la experiencia de un concesionario premium de vehículos de lujo. Permite a los usuarios explorar una colección de coches de alta gama, conocer sus características y consultar detalles individuales de cada modelo. La web está diseñada con un enfoque moderno, responsivo y atractivo, usando HTML, CSS y JavaScript puro.
+## 🚀 Características Principales
 
-### ----> Ejecutar desde WebStorm el index.html de la rama sprint2
-## ----> Documentos PDF/FIGMA-MOCKUPS-SPRINT2.pdf con todos los mockups de figma del sprint2
+- **Catálogo de Vehículos:** Visualización detallada de una flota exclusiva con datos cargados dinámicamente.
+- **Flujo de Checkout Seguro:** Proceso de compra en dos pasos (Información y Pago) protegido por guardias de navegación.
+- **Autenticación de Usuarios:** Sistema de registro e inicio de sesión con persistencia de datos.
+- **Gestión de Contenido Dinámico con Firebase:** Uso de servicios para manejar los usuarios y datos de vehículos mediante la firestore.
+- **Diseño Premium:** Interfaz elegante y minimalista enfocada en la experiencia del usuario de lujo.
 
-## Enlace a los mockups en Figma 
--> [https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=T3q0igQogViRcPRk-1](https://www.figma.com/design/EEC0lcJoLLpwTF892JCFj2/El-equipo-de-miguel.tovar101-team-library?node-id=0-1&t=4h9R8C8I6HcmXmTZ-1)
+## 🛠️ Tecnologías Utilizadas
 
-
-## Características principales de la web
-
-<img width="272" height="643" alt="image" src="https://github.com/user-attachments/assets/eb6883cd-3c95-4bdd-9642-39f74b23d1e2" />
-
-JSON: coches.json (contiene los datos de los coches en venta que son cargados dinámicamente en el detalle.js) y users.json que contiene los usuarios que se han registrado.
-
-<img width="980" height="545" alt="image" src="https://github.com/user-attachments/assets/4434411a-3372-47b2-90b5-adfd9c08962e" />
+- **Core:** [Angular 20](https://angular.dev/)
+- **Lenguaje:** TypeScript
+- **Estilos:** CSS3 (BEM & Modularizado)
+- **Base de Datos:** Firebase 
+- **Gestión de Estado:** Firestore y Servicios de Angular
 
 
-CSS: Cada página tiene su propio archivo CSS además de base.css para estilos generales, en el sprint 2 añadimos a los css la implementacion de un diseño responsive para móvil y tablet.
+## 📂 Estructura del Proyecto
 
-<img width="944" height="536" alt="image" src="https://github.com/user-attachments/assets/a04162cc-784f-4b0a-a1e0-62a1558a9f0d" />
+```text
+src/
+├── app/
+│   ├── components/       # Componentes reutilizables (Header, Footer)
+│   ├── guards/           # Protecciones de rutas (AuthGuard)
+│   ├── models/           # Definición de interfaces y tipos
+│   ├── pages/            # Componentes de página (Home, Login, Detail, etc.)
+│   ├── services/         # Lógica de negocio y llamadas a datos de la firestore
+│   └── firebase.config.ts # Configuración de servicios de Firebase
+├── assets/
+│   ├── data/             # Archivos JSON 
+│   └── images/           # Recursos visuales del sitio
+└── styles/               # Hojas de estilo globales y específicas
+```
 
+## 🏁 Instalación y Uso
 
-JS: Scripts por página (detalle.js, informacion.js, pagos.js, login.js) y un script general (script.js).
+Sigue estos pasos para ejecutar el proyecto localmente:
 
-<img width="928" height="533" alt="image" src="https://github.com/user-attachments/assets/eb958563-87dc-472e-9b68-29fa25429e78" />
+1. **Clonar el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd LuxeDriveWeb3
+   ```
 
-Carga dinánica de los datos del json coches.json en el detalles.js
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
 
-<img width="484" height="540" alt="image" src="https://github.com/user-attachments/assets/885cd3a1-e336-454e-a69f-ff2340c1c658" />
+3. **Iniciar el servidor:**
+   ```bash
+   ng serve
+   ```
+   La aplicación estará disponible en `http://localhost:4200/`.
 
+## 🛤️ Rutas de la Aplicación
 
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Página de inicio con catálogo y contacto. |
+| `/login` | Acceso para usuarios registrados. |
+| `/register` | Formulario de creación de cuenta. |
+| `/vehiculos/:id` | Detalle técnico y visual de un vehículo específico. |
+| `/checkout/info` | Paso 1: Información de facturación (Protegida). |
+| `/checkout/pago` | Paso 2: Pasarela de pago simulada (Protegida). |
 
-Templates HTML: Estructura modular con base, header y footer para reutilización, y páginas funcionales (detalle, informacion, pagos, index, login, registrarse).
+## 🧪 Firebase
 
-Flujo de la web:
+Desde la firestore de firebase se hace la carga de datos dinámica de la web como el contenido de los coche y la carga de usuarios para iniciar sesión/registrarse:
 
-index.html → home que carga los templates header.html, base.html (contiene los apartados  portada, contactos, colección y sobre nosotros) y footer.html.
+![img_1.png](img_1.png)
 
-## Formularios SPRINT 2:
-login.html → página para iniciar sesión el usuario.
-
-<img width="878" height="629" alt="image" src="https://github.com/user-attachments/assets/ff89678e-79e5-4bbd-9a87-f9f12ada6f0e" />
-
-registrarse.html → página para crear una cuenta de usuario.
-
-<img width="810" height="759" alt="image" src="https://github.com/user-attachments/assets/332223dd-ddd2-4d1d-b9b3-52ad62e04b7e" />
-
-
-
-detalle.html → página de detalles de un coche (dinámico por ID) y cargando el template del footer.html.
-
-informacion.html → página de formulario de datos del comprador, validación de campos.
-
-<img width="1124" height="851" alt="image" src="https://github.com/user-attachments/assets/fcd6768d-20b6-4f1b-b90b-8eb9d5ceabad" />
-
-
-pagos.html → página de pago y resumen final, datos del coche cargados desde localStorage pasados del informacion.html.:
-
-
-
-
-## Trello sprint 2
-
-<img width="1137" height="351" alt="image" src="https://github.com/user-attachments/assets/010764ec-10df-443a-9b0a-a15278379e43" />
-
-
-## Storyboard
-
-<img width="860" height="481" alt="image" src="https://github.com/user-attachments/assets/eaddd0e3-def6-4880-9c54-c645dc134d36" />
-
+![img.png](img.png)
+---

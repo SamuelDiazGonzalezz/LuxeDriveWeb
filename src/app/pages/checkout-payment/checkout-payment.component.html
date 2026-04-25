@@ -1,0 +1,84 @@
+<div class="checkout-page">
+  <div class="container">
+    <a routerLink="/checkout/info" class="back">← Volver a información</a>
+    <h1>Finalizar compra</h1>
+
+    <div class="steps">
+      <div class="step active">
+        <div class="circle active">1</div>
+        <span>Información</span>
+      </div>
+
+      <div class="line active-line"></div>
+
+      <div class="step active">
+        <div class="circle active">2</div>
+        <span>Pago</span>
+      </div>
+    </div>
+
+    <div class="grid" *ngIf="vehicle as coche">
+      <div class="card">
+        <h2>Método de Pago</h2>
+
+        <form id="paymentForm" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="input-group">
+            <label>Número de tarjeta *</label>
+            <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" formControlName="cardNumber" (input)="formatCardNumber()">
+            <div class="error-text" *ngIf="form.controls.cardNumber.touched && form.controls.cardNumber.invalid">Introduce 16 dígitos.</div>
+          </div>
+
+          <div class="input-group">
+            <label>Nombre en la tarjeta *</label>
+            <input type="text" formControlName="holderName">
+          </div>
+
+          <div class="row">
+            <div class="input-group">
+              <label>Fecha de expiración *</label>
+              <input type="text" placeholder="MM/AA" maxlength="5" formControlName="expiry" (input)="formatExpiry()">
+            </div>
+
+            <div class="input-group">
+              <label>CVV *</label>
+              <input type="text" placeholder="123" maxlength="3" formControlName="cvv">
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Confirmar Pago</button>
+          <p *ngIf="paymentCompleted">Pago realizado con éxito 🚀</p>
+        </form>
+      </div>
+
+      <aside class="summary-section">
+        <h3>Resumen del Pedido</h3>
+
+        <div class="product-item">
+          <img id="product-img" [src]="coche.imagen" [alt]="coche.nombre">
+          <div class="product-info">
+            <span class="product-name">{{ coche.nombre }}</span>
+            <span class="product-category">{{ coche.tipo }}</span>
+            <span class="product-price">{{ coche.precio }}</span>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>{{ coche.precio }}</span>
+        </div>
+
+        <div class="summary-row">
+          <span>IVA (21%)</span>
+          <span>{{ iva | number:'1.0-2' }} €</span>
+        </div>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <span class="total-price">{{ total | number:'1.0-2' }} €</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

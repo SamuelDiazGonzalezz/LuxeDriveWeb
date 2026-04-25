@@ -1,0 +1,41 @@
+<main class="detalle-wrapper">
+  <a routerLink="/" fragment="coleccion" class="back-link">← Volver a Inicio</a>
+
+  <ng-container *ngIf="!loading && vehicle as coche; else fallback">
+    <div class="detalle-grid">
+      <div class="detalle-img">
+        <span class="badge">{{ coche.tipo }}</span>
+        <img [src]="coche.imagen" [alt]="coche.nombre">
+      </div>
+
+      <div class="detalle-info">
+        <h1>{{ coche.nombre }}</h1>
+        <h2 class="precio">{{ coche.precio }}</h2>
+
+        <p class="descripcion">{{ coche.descripcion }}</p>
+
+        <h3>Especificaciones Técnicas</h3>
+        <div class="spec-grid">
+          <div class="spec-card" *ngFor="let spec of coche.specs">
+            <span class="spec-title">{{ spec.titulo }}</span>
+            <span class="spec-value">{{ spec.valor }}</span>
+          </div>
+        </div>
+
+        <h3 class="caract-title">Características Destacadas</h3>
+        <ul class="caracteristicas">
+          <li *ngFor="let item of coche.caracteristicas">✔ {{ item }}</li>
+        </ul>
+
+        <button type="button" class="btn-detalle" (click)="buyNow()">Comprar</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #fallback>
+    <div class="detalle-error">
+      <h2>Vehículo no encontrado</h2>
+      <p>Vuelve a la colección y selecciona un coche válido.</p>
+    </div>
+  </ng-template>
+</main>

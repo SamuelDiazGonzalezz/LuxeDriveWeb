@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/" (click)="closeMenu()">
+        <img src="assets/images/logo.jpeg" alt="LuxeDrive Logo">
+      </a>
+    </div>
+
+    <nav class="nav-links" [ngClass]="{ active: menuOpen }">
+      <ul>
+        <li><a routerLink="/" fragment="home" (click)="closeMenu()">Inicio</a></li>
+        <li><a routerLink="/" fragment="sobre" (click)="closeMenu()">Sobre Nosotros</a></li>
+        <li><a routerLink="/" fragment="coleccion" (click)="closeMenu()">Vehículos</a></li>
+        <li><a routerLink="/" fragment="contacto" (click)="closeMenu()">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-area" id="userArea">
+      <ng-container *ngIf="auth.currentUser$ | async as user; else guestArea">
+        <div class="user-profile">
+          <span class="user-icon">
+            <img src="assets/images/perfil.png" alt="Perfil">
+          </span>
+          <span class="username">{{ user.name }}</span>
+          <button type="button" class="logout-btn" (click)="logout()">Cerrar sesión</button>
+        </div>
+      </ng-container>
+
+      <ng-template #guestArea>
+        <a routerLink="/login" class="login-btn" (click)="closeMenu()">Iniciar sesión</a>
+      </ng-template>
+    </div>
+
+    <button type="button" class="menu-toggle" (click)="toggleMenu()">☰</button>
+  </div>
+
+  <div class="nav-overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>
+</header>
