@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="carga desde firebase los datos de los vehículos">
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.css" afterDir="false" />
+    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,8 @@
       <workItem from="1776767688020" duration="572000" />
       <workItem from="1776768297822" duration="4340000" />
       <workItem from="1776850518728" duration="229000" />
-      <workItem from="1776857889414" duration="3804000" />
+      <workItem from="1776857889414" duration="3845000" />
+      <workItem from="1777116584877" duration="506000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
@@ -216,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776861648083</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajuste de imagen de la portada">
+      <option name="closed" value="true" />
+      <created>1776862121638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1776862121638</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +301,7 @@
     <MESSAGE value="Actualizacion firebase y archivos firebase" />
     <MESSAGE value="v20" />
     <MESSAGE value="carga desde firebase los datos de los vehículos" />
-    <option name="LAST_COMMIT_MESSAGE" value="carga desde firebase los datos de los vehículos" />
+    <MESSAGE value="ajuste de imagen de la portada" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste de imagen de la portada" />
   </component>
 </project>
