@@ -73,5 +73,6 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 Desde la firestore de firebase se hace la carga de datos dinámica de la web como el contenido de los coche y la carga de usuarios para iniciar sesión/registrarse:
 
 ![img_1.png](img_1.png)
+
 ![img.png](img.png)
 ---
