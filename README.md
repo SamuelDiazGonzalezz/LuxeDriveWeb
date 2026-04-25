@@ -13,7 +13,7 @@ Proyecto Angular que replica las funcionalidades del sitio original de LuxeDrive
 
 ```bash
 npm install
-npm start
+ng serve
 ```
 
 ## Rutas
