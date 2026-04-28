@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="">
+    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="Firebase-firestore detalles de los vehículos y sus características">
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/vehicle-detail/vehicle-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/vehicle-detail/vehicle-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/vehicle.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/vehicle.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data/coches.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/coches.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +149,11 @@
       <workItem from="1776850518728" duration="229000" />
       <workItem from="1776857889414" duration="3845000" />
       <workItem from="1777116584877" duration="506000" />
+      <workItem from="1777139932282" duration="306000" />
+      <workItem from="1777140856140" duration="44000" />
+      <workItem from="1777141949527" duration="49000" />
+      <workItem from="1777325908190" duration="55000" />
+      <workItem from="1777375946686" duration="1516000" />
     </task>
     <task id="LOCAL-00001" summary="Avance del header">
       <option name="closed" value="true" />
@@ -228,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776862121638</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Firebase-firestore detalles de los vehículos y sus características">
+      <option name="closed" value="true" />
+      <created>1777119323445</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1777119323445</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +319,7 @@
     <MESSAGE value="v20" />
     <MESSAGE value="carga desde firebase los datos de los vehículos" />
     <MESSAGE value="ajuste de imagen de la portada" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajuste de imagen de la portada" />
+    <MESSAGE value="Firebase-firestore detalles de los vehículos y sus características" />
+    <option name="LAST_COMMIT_MESSAGE" value="Firebase-firestore detalles de los vehículos y sus características" />
   </component>
 </project>
