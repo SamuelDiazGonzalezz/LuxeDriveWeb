@@ -1,6 +1,6 @@
 # LuxeDriveWeb
 
-![img_6.png](img_6.png)
+![img_6.png](src/assets/images/img_6.png)
 
 LuxeDriveWeb3 es una plataforma web moderna desarrollada con **Angular** para la gestión, visualización y adquisición de vehículos de lujo. El proyecto ofrece una experiencia de usuario premium con un flujo de compra completo, autenticación de usuarios y una interfaz responsiva, con carga de datos dinámica desde la firestore.
 
@@ -123,11 +123,11 @@ Desde la firestore de firebase se hace la carga de datos dinámica de la web:
 
 USUARIOS
 
-![img_4.png](img_4.png)
+![img_4.png](src/assets/images/img_4.png)
 
 DATOS VEHÍCULOS
 
-![img_5.png](img_5.png)
+![img_5.png](src/assets/images/img_5.png)
 
 ---
 ## 🧭 Tour por la Web
@@ -147,7 +147,7 @@ DATOS VEHÍCULOS
 
 ## 📈 Evolución y Trello
 
-![img_2.png](img_2.png)
+![img_2.png](src/assets/images/img_2.png)
 ---
 
 
