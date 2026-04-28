@@ -76,3 +76,7 @@ Desde la firestore de firebase se hace la carga de datos dinámica de la web com
 
 ![img.png](img.png)
 ---
+
+## TRELLO
+
+<img width="1244" height="460" alt="image" src="https://github.com/user-attachments/assets/66608373-eeab-4e41-b647-f3c08f69fc2c" />
