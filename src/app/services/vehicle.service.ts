@@ -65,12 +65,12 @@ export class VehicleService {
   private extractSpecs(vehicle: Partial<Vehicle>): Vehicle['specs'] {
     const rawVehicle = vehicle as Partial<Vehicle> & {
       especificaciones?: unknown;
+      [key: string]: unknown;
     };
 
     const rawSpecs = rawVehicle.specs ?? rawVehicle.especificaciones;
     const specsArray = this.toArray(rawSpecs);
-
-    return specsArray
+    const baseSpecs = specsArray
       .map((spec) => {
         const rawSpec = (spec ?? {}) as {
           titulo?: string;
@@ -90,6 +90,35 @@ export class VehicleService {
         return { titulo, valor };
       })
       .filter((spec): spec is Vehicle['specs'][number] => spec !== null);
+
+    const additionalSpecs = [
+      this.buildNamedSpec(rawVehicle, 'Autonomía', ['Autonomía', 'Autonomia']),
+      this.buildNamedSpec(rawVehicle, 'Año', ['Año', 'Ano']),
+      this.buildNamedSpec(rawVehicle, 'Batería', ['Batería', 'Bateria']),
+      this.buildNamedSpec(rawVehicle, 'Combustible', ['Combustible']),
+      this.buildNamedSpec(rawVehicle, 'Potencia', ['Potencia']),
+      this.buildNamedSpec(rawVehicle, '0-100 km-h', ['0-100 km-h', '0-100 km/h']),
+      this.buildNamedSpec(rawVehicle, 'Motor', ['motor', 'Motor']),
+      this.buildNamedSpec(rawVehicle, 'Velocidad Máx.', [
+        'Velocidad Máx.',
+        'Velocidad Max.',
+        'Velocidad Max',
+        'Velocidad máxima',
+        'Velocidad maxima'
+      ])
+    ].filter((spec): spec is Vehicle['specs'][number] => spec !== null);
+
+    const knownTitles = new Set(baseSpecs.map((spec) => spec.titulo.trim().toLowerCase()));
+
+    additionalSpecs.forEach((spec) => {
+      const normalizedTitle = spec.titulo.trim().toLowerCase();
+      if (!knownTitles.has(normalizedTitle)) {
+        baseSpecs.push(spec);
+        knownTitles.add(normalizedTitle);
+      }
+    });
+
+    return baseSpecs;
   }
 
   private extractFeatures(vehicle: Partial<Vehicle>): string[] {
@@ -97,12 +126,38 @@ export class VehicleService {
       caracteristicasDestacadas?: unknown;
       features?: unknown;
     };
+    const rawFeatures =
+      rawVehicle.caracteristicas ?? rawVehicle.caracteristicasDestacadas ?? rawVehicle.features;
 
-    return this.toArray(
-      rawVehicle.caracteristicas ?? rawVehicle.caracteristicasDestacadas ?? rawVehicle.features
-    )
+    if (typeof rawFeatures === 'string') {
+      return rawFeatures
+        .split(',')
+        .map((item) => item.trim())
+        .filter((item) => item.length > 0);
+    }
+
+    return this.toArray(rawFeatures)
       .map((item) => `${item ?? ''}`.trim())
       .filter((item) => item.length > 0);
+  }
+
+  private buildNamedSpec(
+    vehicle: Record<string, unknown>,
+    title: string,
+    keys: string[]
+  ): Vehicle['specs'][number] | null {
+    const value = keys
+      .map((key) => vehicle[key])
+      .find((candidate) => candidate !== undefined && candidate !== null && `${candidate}`.trim() !== '');
+
+    if (value === undefined || value === null) {
+      return null;
+    }
+
+    return {
+      titulo: title,
+      valor: `${value}`.trim()
+    };
   }
 
   private toArray<T>(value: unknown): T[] {
