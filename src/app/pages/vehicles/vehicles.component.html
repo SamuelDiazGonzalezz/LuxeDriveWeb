@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="eyebrow">Coleccion</p>
+    <h1>Vehiculos disponibles</h1>
+    <p class="lead">
+      Consulta toda la coleccion cargada desde Firebase y entra en cada ficha para ver el detalle completo.
+    </p>
+  </div>
+</section>
+
+<section class="vehicles-section">
+  <div class="vehicles-shell" *ngIf="vehicles$ | async as vehicles">
+    <div class="vehicles-grid">
+      <article class="vehicle-card" *ngFor="let coche of vehicles">
+        <span class="badge-type">{{ coche.tipo }}</span>
+        <img [src]="coche.imagen" [alt]="coche.nombre">
+
+        <div class="card-content">
+          <h2>{{ coche.nombre }}</h2>
+          <p>{{ coche.descripcion }}</p>
+          <span class="price">{{ coche.precio }}</span>
+          <div class="card-actions">
+            <a [routerLink]="['/vehiculos', coche.id]" class="btn-card">Ver detalle</a>
+            <button
+              type="button"
+              class="favorite-btn"
+              [class.active]="coche.isFavorite"
+              [class.pending]="pendingFavoriteIds.has(coche.id)"
+              [class.burst]="animatedFavoriteIds.has(coche.id)"
+              [disabled]="pendingFavoriteIds.has(coche.id)"
+              (click)="toggleFavorite(coche.id)">
+              {{ pendingFavoriteIds.has(coche.id) ? 'Guardando...' : (coche.isFavorite ? 'Guardado' : 'Guardar favorito') }}
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="empty-state" *ngIf="vehicles.length === 0">No hay vehiculos disponibles.</p>
+  </div>
+</section>
+
+<app-footer></app-footer>

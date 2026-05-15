@@ -1,37 +1,56 @@
 <header class="header">
   <div class="header-container">
+    <button
+      type="button"
+      class="menu-toggle"
+      [class.active]="menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir menu de navegacion"
+      (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <div class="logo">
-      <a routerLink="/" (click)="closeMenu()">
+      <a routerLink="/" class="logo-button" (click)="closeMenu()">
         <img src="assets/images/logo.jpeg" alt="LuxeDrive Logo">
       </a>
     </div>
 
-    <nav class="nav-links" [ngClass]="{ active: menuOpen }">
-      <ul>
-        <li><a routerLink="/" fragment="home" (click)="closeMenu()">Inicio</a></li>
-        <li><a routerLink="/" fragment="sobre" (click)="closeMenu()">Sobre Nosotros</a></li>
-        <li><a routerLink="/" fragment="coleccion" (click)="closeMenu()">Vehículos</a></li>
-        <li><a routerLink="/" fragment="contacto" (click)="closeMenu()">Contacto</a></li>
-      </ul>
-    </nav>
+    <div class="header-panel" [ngClass]="{ active: menuOpen }">
+      <nav class="nav-links">
+        <ul>
+          <li><a routerLink="/" class="nav-link-button" (click)="closeMenu()">Inicio</a></li>
+          <li><a routerLink="/sobre" class="nav-link-button" (click)="closeMenu()">Sobre Nosotros</a></li>
+          <li><a routerLink="/vehiculos" class="nav-link-button" (click)="closeMenu()">Vehiculos</a></li>
+          <li><a routerLink="/favoritos" class="nav-link-button" (click)="closeMenu()">Favoritos</a></li>
+          <li><a routerLink="/contacto" class="nav-link-button" (click)="closeMenu()">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <div class="user-area" id="userArea">
-      <ng-container *ngIf="auth.currentUser$ | async as user; else guestArea">
-        <div class="user-profile">
-          <span class="user-icon">
-            <img src="assets/images/perfil.png" alt="Perfil">
-          </span>
-          <span class="username">{{ user.name }}</span>
-          <button type="button" class="logout-btn" (click)="logout()">Cerrar sesión</button>
-        </div>
-      </ng-container>
+      <div class="user-area" id="userArea">
+        <ng-container *ngIf="auth.currentUser$ | async as user; else guestArea">
+          <div class="user-profile">
+            <span class="user-icon">
+              <img [src]="user.photoUrl || 'assets/images/perfil.png'" alt="Perfil">
+            </span>
+            <div class="user-meta">
+              <span class="user-label">Cuenta activa</span>
+              <span class="username">{{ user.name }}</span>
+            </div>
+            <button type="button" class="logout-btn" (click)="logout()">Cerrar sesion</button>
+          </div>
+        </ng-container>
 
-      <ng-template #guestArea>
-        <a routerLink="/login" class="login-btn" (click)="closeMenu()">Iniciar sesión</a>
-      </ng-template>
+        <ng-template #guestArea>
+          <div class="guest-actions">
+            <a routerLink="/register" class="secondary-link" (click)="closeMenu()">Registro</a>
+            <a routerLink="/login" class="login-btn" (click)="closeMenu()">Iniciar sesion</a>
+          </div>
+        </ng-template>
+      </div>
     </div>
-
-    <button type="button" class="menu-toggle" (click)="toggleMenu()">☰</button>
   </div>
 
   <div class="nav-overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>

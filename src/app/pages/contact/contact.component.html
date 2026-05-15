@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<ng-container *ngIf="content$ | async as content">
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Contacto</p>
+      <h1>{{ content.contact.title }}</h1>
+      <p class="lead">{{ content.contact.subtitle }}</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>Solicita informacion</h2>
+
+        <form [formGroup]="contactForm" (ngSubmit)="submitContact()">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" formControlName="nombre">
+            <div class="error-text" *ngIf="contactForm.controls.nombre.touched && contactForm.controls.nombre.invalid">
+              El nombre es obligatorio.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com" formControlName="email">
+            <div class="error-text" *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+              Introduce un email valido.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Telefono</label>
+            <input type="tel" placeholder="+34 600 000 000" formControlName="telefono">
+          </div>
+
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea rows="5" placeholder="En que vehiculo estas interesado?" formControlName="mensaje"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Enviar solicitud</button>
+          <p class="success-text" *ngIf="contactSent">Mensaje enviado correctamente.</p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="info-box">
+          <div class="info-icon">Email</div>
+          <div>
+            <h3>Correo</h3>
+            <p *ngFor="let email of content.contact.emails">{{ email }}</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">Tel</div>
+          <div>
+            <h3>Telefono</h3>
+            <p *ngFor="let phone of content.contact.phones">{{ phone }}</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">Loc</div>
+          <div>
+            <h3>Showroom</h3>
+            <p *ngFor="let line of content.contact.address">{{ line }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<app-footer></app-footer>

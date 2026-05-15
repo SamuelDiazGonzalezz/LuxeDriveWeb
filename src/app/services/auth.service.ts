@@ -15,8 +15,10 @@ import { AppUser } from '../models/user.model';
 
 interface FirebaseUserDocument {
   nombre: string;
+  apellidos: string;
   correo: string;
   rol: 'admin' | 'client';
+  fotoUrl: string | null;
   creadoEn: string;
   ultimoAcceso: string | null;
 }
@@ -49,8 +51,11 @@ export class AuthService {
         this.currentUserSubject.next({
           id: firebaseUser.uid,
           name: firebaseUser.displayName ?? firebaseUser.email?.split('@')[0] ?? 'Usuario',
+          firstName: firebaseUser.displayName?.split(' ')[0] ?? 'Usuario',
+          lastName: firebaseUser.displayName?.split(' ').slice(1).join(' ') ?? '',
           email: firebaseUser.email ?? '',
           role: 'client',
+          photoUrl: firebaseUser.photoURL ?? null,
           created_at: new Date().toISOString(),
           last_login: new Date().toISOString()
         });
@@ -88,8 +93,10 @@ export class AuthService {
       } else {
         await setDoc(userRef, {
           nombre: credentials.user.displayName ?? email.split('@')[0] ?? 'Usuario',
+          apellidos: '',
           correo: email,
           rol: 'client',
+          fotoUrl: credentials.user.photoURL ?? null,
           creadoEn: now,
           ultimoAcceso: now
         } satisfies FirebaseUserDocument);
@@ -105,17 +112,28 @@ export class AuthService {
     }
   }
 
-  async register(name: string, email: string, password: string): Promise<{ success: boolean; message?: string }> {
+  async register(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    photoUrl: string | null
+  ): Promise<{ success: boolean; message?: string }> {
     try {
       const credentials = await createUserWithEmailAndPassword(this.auth, email, password);
       const now = new Date().toISOString();
+      const fullName = `${firstName} ${lastName}`.trim();
 
       try {
-        await updateProfile(credentials.user, { displayName: name });
+        await updateProfile(credentials.user, {
+          displayName: fullName
+        });
         await setDoc(doc(this.firestore, 'usuarios', credentials.user.uid), {
-          nombre: name,
+          nombre: firstName,
+          apellidos: lastName,
           correo: email,
           rol: 'client',
+          fotoUrl: photoUrl,
           creadoEn: now,
           ultimoAcceso: now
         } satisfies FirebaseUserDocument);
@@ -148,9 +166,12 @@ export class AuthService {
 
       return {
         id: firebaseUser.uid,
-        name: data.nombre,
+        name: `${data.nombre} ${data.apellidos}`.trim(),
+        firstName: data.nombre,
+        lastName: data.apellidos ?? '',
         email: data.correo,
         role: data.rol ?? 'client',
+        photoUrl: data.fotoUrl ?? firebaseUser.photoURL ?? null,
         created_at: data.creadoEn ?? new Date().toISOString(),
         last_login: data.ultimoAcceso ?? null
       };
@@ -159,16 +180,21 @@ export class AuthService {
     const fallbackUser: AppUser = {
       id: firebaseUser.uid,
       name: firebaseUser.displayName ?? firebaseUser.email?.split('@')[0] ?? 'Usuario',
+      firstName: firebaseUser.displayName?.split(' ')[0] ?? 'Usuario',
+      lastName: firebaseUser.displayName?.split(' ').slice(1).join(' ') ?? '',
       email: firebaseUser.email ?? '',
       role: 'client',
+      photoUrl: firebaseUser.photoURL ?? null,
       created_at: new Date().toISOString(),
       last_login: new Date().toISOString()
     };
 
     await setDoc(userRef, {
-      nombre: fallbackUser.name,
+      nombre: fallbackUser.firstName,
+      apellidos: fallbackUser.lastName,
       correo: fallbackUser.email,
       rol: fallbackUser.role,
+      fotoUrl: fallbackUser.photoUrl,
       creadoEn: fallbackUser.created_at,
       ultimoAcceso: fallbackUser.last_login
     } satisfies FirebaseUserDocument);
@@ -189,6 +215,8 @@ export class AuthService {
         return 'El correo no es valido.';
       case 'auth/weak-password':
         return 'La contrasena debe tener al menos 6 caracteres.';
+      case 'auth/invalid-profile-attribute':
+        return 'El perfil de Firebase Auth no acepta esa imagen. La foto se guardara en Firestore.';
       case 'auth/invalid-credential':
       case 'auth/user-not-found':
       case 'auth/wrong-password':
