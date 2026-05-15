@@ -2,15 +2,24 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { HeaderComponent } from '../../components/header/header.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { ContentService } from '../../services/content.service';
 import { VehicleService } from '../../services/vehicle.service';
+import { AuthService } from '../../services/auth.service';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, NgFor, NgIf, RouterLink, ReactiveFormsModule, HeaderComponent, FooterComponent],
+  imports: [
+    AsyncPipe,
+    NgFor,
+    NgIf,
+    RouterLink,
+    ReactiveFormsModule,
+    HeaderComponent,
+    FooterComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -18,6 +27,7 @@ export class HomeComponent {
   private fb = inject(FormBuilder);
   private contentService = inject(ContentService);
   private vehicleService = inject(VehicleService);
+  auth = inject(AuthService);
 
   content$ = this.contentService.content$;
   vehicles$ = this.vehicleService.getVehicles();

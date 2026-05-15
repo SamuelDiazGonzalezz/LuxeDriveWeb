@@ -1,153 +1,173 @@
-# LuxeDriveWeb
+# LuxeDrive - Sprint 4
 
-![img_6.png](src/assets/images/img_6.png)
+Proyecto desarrollado con Ionic y Angular para el Sprint 4. La aplicacion implementa autenticacion con Firebase, gestion de perfiles en Firestore, consulta de vehiculos desde Firebase y favoritos persistidos para cada usuario.
 
-LuxeDriveWeb3 es una plataforma web moderna desarrollada con **Angular** para la gestión, visualización y adquisición de vehículos de lujo. El proyecto ofrece una experiencia de usuario premium con un flujo de compra completo, autenticación de usuarios y una interfaz responsiva, con carga de datos dinámica desde la firestore.
+## Objetivo del sprint
 
-## 🚀 Características Principales
+El trabajo pide una app Ionic con al menos 4 pantallas y estas funcionalidades:
 
-- **Catálogo de Vehículos:** Visualización detallada de una flota exclusiva con datos cargados dinámicamente.
-- **Flujo de Checkout Seguro:** Proceso de compra en dos pasos (Información y Pago) protegido por guardias de navegación.
-- **Autenticación de Usuarios:** Sistema de registro e inicio de sesión con persistencia de datos.
-- **Gestión de Contenido Dinámico con Firebase:** Uso de servicios para manejar los usuarios y datos de vehículos mediante la firestore.
-- **Diseño Premium:** Interfaz elegante y minimalista enfocada en la experiencia del usuario de lujo.
+- Registro de usuarios en Firebase
+- Inicio de sesion con Firebase Auth
+- Pantalla de favoritos protegida
+- Pantalla de detalle con alta y baja de favoritos usando almacenamiento local del dispositivo
 
-## 🛠️ Tecnologías Utilizadas
+Este proyecto cubre esos requisitos con una app de catalogo de vehiculos de lujo.
 
-- **Core:** [Angular 20](https://angular.dev/)
-- **Lenguaje:** TypeScript
-- **Estilos:** CSS3 (BEM & Modularizado)
-- **Base de Datos:** Firebase 
-- **Gestión de Estado:** Firestore y Servicios de Angular
+## Tecnologias
 
+- Angular 20
+- Ionic Angular
+- TypeScript
+- Firebase Authentication
+- Cloud Firestore
+- Capacitor
+- SQLite con `@capacitor-community/sqlite`
 
-## 📂 Estructura del Proyecto
+## Funcionalidades implementadas
+
+### 1. Registro de usuarios
+
+Ruta: `/register`
+
+- Alta de usuarios con email y contrasena mediante Firebase Auth
+- Formulario con nombre, apellidos, email, contrasena, confirmacion e imagen
+- Guardado del perfil en Firestore, coleccion `usuarios`
+- La imagen del perfil se persiste en Firestore dentro del documento del usuario
+
+### 2. Inicio de sesion
+
+Ruta: `/login`
+
+- Acceso con email y contrasena usando Firebase Auth
+- Actualizacion del campo `ultimoAcceso` en Firestore
+
+### 3. Catalogo
+
+Ruta: `/vehiculos`
+
+- Lectura de la coleccion `vehiculos` desde Firestore
+- Vista de listado con acceso al detalle
+- Boton por vehiculo para guardar o quitar de favoritos
+
+### 4. Favoritos
+
+Ruta: `/favoritos`
+
+- Ruta protegida con `authGuard`
+- Muestra solo los vehiculos marcados como favoritos por el usuario autenticado
+- Si no hay favoritos, aparece un mensaje y un boton para ir al catalogo
+- Los favoritos se guardan por usuario
+- En navegador web, si SQLite no responde, la app usa `localStorage` como respaldo para evitar bloqueos
+
+### 5. Detalle del vehiculo
+
+Ruta: `/vehiculos/:id`
+
+- Muestra imagen, descripcion, especificaciones y caracteristicas
+- Permite anadir o quitar el vehiculo de favoritos
+- Incluye feedback visual en el boton de favoritos
+
+## Rutas principales
+
+| Ruta | Descripcion |
+|------|-------------|
+| `/` | Inicio |
+| `/sobre` | Informacion de la marca |
+| `/vehiculos` | Catalogo completo |
+| `/vehiculos/:id` | Detalle de un vehiculo |
+| `/contacto` | Pagina de contacto |
+| `/login` | Inicio de sesion |
+| `/register` | Registro |
+| `/favoritos` | Favoritos del usuario autenticado |
+| `/checkout/info` | Paso 1 del checkout |
+| `/checkout/pago` | Paso 2 del checkout |
+
+## Estructura relacionada con Sprint 4
 
 ```text
 src/
 ├── app/
-│   ├── components/       # Componentes reutilizables (Header, Footer)
-│   ├── guards/           # Protecciones de rutas (AuthGuard)
-│   ├── models/           # Definición de interfaces y tipos
-│   ├── pages/            # Componentes de página (Home, Login, Detail, etc.)
-│   ├── services/         # Lógica de negocio y llamadas a datos de la firestore
-│   └── firebase.config.ts # Configuración de servicios de Firebase
-├── assets/
-│   ├── data/             # Archivos JSON 
-│   └── images/           # Recursos visuales del sitio
-└── styles/               # Hojas de estilo globales y específicas
+│   ├── guards/
+│   │   └── auth.guard.ts
+│   ├── pages/
+│   │   ├── register/
+│   │   ├── login/
+│   │   ├── favorites/
+│   │   ├── vehicle-detail/
+│   │   └── vehicles/
+│   ├── services/
+│   │   ├── auth.service.ts
+│   │   ├── vehicle.service.ts
+│   │   ├── favorites-storage.service.ts
+│   │   └── sqlite.service.ts
+│   ├── app.routes.ts
+│   └── firebase.config.ts
+└── assets/
 ```
 
-## 🏁 Instalación y Uso
+## Datos en Firebase
 
-Sigue estos pasos para ejecutar el proyecto localmente:
+### Coleccion `usuarios`
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone <url-del-repositorio>
-   cd LuxeDriveWeb
-   ```
+Cada documento de usuario guarda:
 
-2. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
+- `nombre`
+- `apellidos`
+- `correo`
+- `rol`
+- `fotoUrl`
+- `creadoEn`
+- `ultimoAcceso`
 
-3. **Iniciar el servidor:**
-   ```bash
-   ng serve
-   ```
-   La aplicación estará disponible en `http://localhost:4200/`.
+### Coleccion `vehiculos`
 
-## 🛤️ Rutas de la Aplicación
+Cada vehiculo puede incluir:
 
-| Ruta | Descripción |
-|------|-------------|
-| `/` | Página de inicio con catálogo y contacto. |
-| `/login` | Acceso para usuarios registrados. |
-| `/register` | Formulario de creación de cuenta. |
-| `/vehiculos/:id` | Detalle técnico y visual de un vehículo específico. |
-| `/checkout/info` | Paso 1: Información de facturación (Protegida). |
-| `/checkout/pago` | Paso 2: Pasarela de pago simulada (Protegida). |
+- `nombre`
+- `precio`
+- `tipo`
+- `imagen`
+- `descripcion`
+- `specs`
+- `caracteristicas`
 
-## 🏗️ Estructura del Código
+## Como ejecutar el proyecto
 
-El proyecto sigue una arquitectura modular basada en componentes y servicios de Angular:
+1. Instalar dependencias:
 
-### Componentes Core
-- **HeaderComponent**: Gestiona la navegación principal, el logotipo y los estados de autenticación del usuario.
-- **FooterComponent**: Proporciona información de contacto, enlaces legales y redes sociales.
+```bash
+npm install
+```
 
-### Páginas (Pages)
-- **HomeComponent**: Punto de entrada que muestra el catálogo dinámico de vehículos y la propuesta de valor.
-- **VehicleDetailComponent**: Vista detallada que presenta especificaciones técnicas, imágenes y características de un coche específico.
-- **Login/RegisterComponent**: Interfaces para la gestión de acceso y creación de cuentas de usuario.
-- **CheckoutInfoComponent**: Primer paso del proceso de compra donde se recolectan datos de facturación.
-- **CheckoutPaymentComponent**: Segundo paso que simula una pasarela de pago segura.
+2. Ejecutar en desarrollo:
 
-### Servicios (Services)
-- **VehicleService**: Centraliza la recuperación de datos desde Firestore, aplicando normalización de datos para asegurar consistencia.
-- **AuthService**: Gestiona el ciclo de vida de la autenticación con Firebase Auth y la persistencia de perfiles en Firestore.
-- **SelectionService**: Mantiene el estado del vehículo seleccionado durante el flujo de compra.
+```bash
+npm start
+```
 
----
+3. Generar build:
 
-## 🗄️ Estructura de Datos en Firebase
+```bash
+npm run build
+```
 
-Los datos se organizan en dos colecciones principales en Cloud Firestore:
+## Validacion del sprint
 
-### 1. Colección `usuarios`
-Almacena la información de perfil de cada usuario registrado:
-- **Campos**:
-  - `nombre`: Nombre completo del usuario.
-  - `correo`: Dirección de email.
-  - `rol`: Nivel de acceso (`admin` | `client`).
-  - `creadoEn`: Fecha de registro (ISO string).
-  - `ultimoAcceso`: Fecha del último inicio de sesión.
+Checklist de cumplimiento:
 
-### 2. Colección `vehiculos`
-Contiene la flota disponible para visualización y compra:
-- **Campos**:
-  - `nombre`: Marca y modelo.
-  - `precio`: Coste base del vehículo.
-  - `tipo`: Categoría (SUV, Sedán, Eléctrico, etc.).
-  - `potencia`: Potencia del vehículo.
-  - `descripcion`: Texto descriptivo.
-  - `specs`: Array de objetos `{titulo, valor}` para datos técnicos.
-  - `caracteristicas`: Lista de strings con extras destacados.
+- [x] Proyecto hecho con Ionic y Angular
+- [x] Pantalla de registro
+- [x] Pantalla de login
+- [x] Pantalla de favoritos
+- [x] Pantalla de detalle
+- [x] Registro con Firebase Auth
+- [x] Perfil adicional en Firestore
+- [x] Listado de vehiculos desde Firebase
+- [x] Favoritos por usuario
+- [x] Acceso protegido a favoritos
+- [x] Boton para anadir o quitar favoritos desde detalle
 
----
-## 🧪 Firebase (Capturas)
+## Notas
 
-Desde la firestore de firebase se hace la carga de datos dinámica de la web:
-
-USUARIOS
-
-![img_4.png](src/assets/images/img_4.png)
-
-DATOS VEHÍCULOS
-
-![img_5.png](src/assets/images/img_5.png)
-
----
-## 🧭 Tour por la Web
-
-1. **Catálogo**: Al entrar, el usuario visualiza una lista de coches cargados en tiempo real desde Firebase.
-2. **Detalle**: Al hacer clic en un coche, se accede a su ficha técnica completa con especificaciones detalladas.
-3. **Registro/Login**: El usuario puede crear una cuenta. Al registrarse, los datos se guardan instantáneamente en la colección `usuarios` de Firestore.
-4. **Flujo de Compra**: Una vez autenticado, el usuario puede seleccionar un vehículo, rellenar su información de contacto en un formulario validado y proceder a la simulación de pago.
-
-**Ejemplo de introducción y visualización de datos:**
-- **Paso 1**: Un nuevo usuario rellena el formulario en `/register`.
-- **Paso 2**: Tras el éxito, `AuthService` guarda los datos en Firestore.
-- **Paso 3**: El usuario es redirigido al catálogo, y su nombre aparece en el Header, confirmando que la sesión y sus datos están activos en la plataforma.
-
----
-
-
-## 📈 Evolución y Trello
-
-![img_2.png](src/assets/images/img_2.png)
----
-
-
+- En dispositivo o entorno compatible, los favoritos usan SQLite.
+- En navegador web, la app aplica un fallback a `localStorage` si SQLite no responde, para mantener la experiencia funcional durante la demo.

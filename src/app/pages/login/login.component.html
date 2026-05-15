@@ -1,41 +1,77 @@
-<div class="auth-page">
-  <a routerLink="/" class="back-link">&larr; Volver al inicio</a>
+<div class="ion-page">
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Acceso</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <div class="login-container">
-    <h1 class="logo">LuxeDrive</h1>
-    <p class="subtitle">Inicia sesion en tu cuenta</p>
+  <ion-content [fullscreen]="true">
+    <div class="auth-shell">
+      <ion-card class="auth-card">
+        <ion-card-header>
+          <ion-card-title>LuxeDrive</ion-card-title>
+          <ion-card-subtitle>Inicia sesion con tu cuenta de Firebase</ion-card-subtitle>
+        </ion-card-header>
 
-    <form id="loginForm" [formGroup]="form" (ngSubmit)="submit()">
-      <div class="input-group">
-        <label>Email</label>
-        <div class="input-wrapper">
-          <span class="icon">&#9993;</span>
-          <input type="email" placeholder="tu@email.com" formControlName="email">
-        </div>
-        <div class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">Introduce un email valido.</div>
-      </div>
+        <ion-card-content>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <ion-list lines="none">
+              <ion-item>
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  formControlName="email"
+                  placeholder="usuario@correo.com">
+                </ion-input>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">
+                Introduce un email valido.
+              </ion-note>
 
-      <div class="input-group">
-        <label>Contrasena</label>
-        <div class="input-wrapper">
-          <span class="icon">&#128274;</span>
-          <input [type]="showPassword ? 'text' : 'password'" placeholder="••••••••" formControlName="password">
-          <button type="button" class="toggle-password" (click)="showPassword = !showPassword">&#128065;</button>
-        </div>
-        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">La contrasena es obligatoria.</div>
-        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">La contrasena debe tener al menos 6 caracteres.</div>
-      </div>
+              <ion-item>
+                <ion-label position="stacked">Contrasena</ion-label>
+                <ion-input
+                  [type]="showPassword ? 'text' : 'password'"
+                  autocomplete="current-password"
+                  formControlName="password"
+                  placeholder="Minimo 6 caracteres">
+                </ion-input>
+                <ion-button
+                  slot="end"
+                  fill="clear"
+                  type="button"
+                  (click)="showPassword = !showPassword">
+                  {{ showPassword ? 'Ocultar' : 'Mostrar' }}
+                </ion-button>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">
+                La contrasena es obligatoria.
+              </ion-note>
+              <ion-note class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">
+                La contrasena debe tener al menos 6 caracteres.
+              </ion-note>
+            </ion-list>
 
-      <button type="submit" class="login-btn" [disabled]="isSubmitting">
-        {{ isSubmitting ? 'Entrando...' : 'Iniciar sesion' }}
-      </button>
-      <div class="error-text" *ngIf="errorMessage">{{ errorMessage }}</div>
-    </form>
+            <ion-text color="danger" *ngIf="errorMessage">
+              <p class="feedback">{{ errorMessage }}</p>
+            </ion-text>
 
-    <p class="register-text">
-      ¿No tienes cuenta? <a routerLink="/register" class="register-link">Registrate</a>
-    </p>
+            <ion-button expand="block" type="submit" [disabled]="isSubmitting">
+              {{ isSubmitting ? 'Entrando...' : 'Iniciar sesion' }}
+            </ion-button>
 
-    <div class="demo-box">LuxeDrive</div>
-  </div>
+            <p class="auth-link-row">
+              No tienes cuenta?
+              <a routerLink="/register">Registrate</a>
+            </p>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
 </div>

@@ -1,62 +1,130 @@
-<div class="auth-page">
-  <a routerLink="/login" class="back-link">&larr; Volver</a>
+<div class="ion-page">
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/login"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Registro</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <div class="register-container">
-    <h1 class="logo">LuxeDrive</h1>
-    <p class="subtitle">Crea tu cuenta</p>
+  <ion-content [fullscreen]="true">
+    <div class="auth-shell">
+      <ion-card class="auth-card">
+        <ion-card-header>
+          <ion-card-title>Alta de usuario</ion-card-title>
+          <ion-card-subtitle>
+            Crea la cuenta y guarda el perfil en Firebase Authentication y Firestore.
+          </ion-card-subtitle>
+        </ion-card-header>
 
-    <form id="registerForm" [formGroup]="form" (ngSubmit)="submit()">
-      <div class="input-group">
-        <label>Nombre completo</label>
-        <div class="input-wrapper">
-          <span class="icon">&#128100;</span>
-          <input type="text" placeholder="Juan Garcia" formControlName="name">
-        </div>
-        <div class="error-text" *ngIf="form.controls.name.touched && form.controls.name.hasError('required')">El nombre es obligatorio.</div>
-        <div class="error-text" *ngIf="form.controls.name.touched && form.controls.name.hasError('minlength')">El nombre debe tener al menos 3 caracteres.</div>
-      </div>
+        <ion-card-content>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <ion-list lines="none">
+              <ion-item>
+                <ion-label position="stacked">Nombre</ion-label>
+                <ion-input formControlName="firstName" placeholder="Nombre"></ion-input>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.firstName.touched && form.controls.firstName.invalid">
+                El nombre debe tener al menos 2 caracteres.
+              </ion-note>
 
-      <div class="input-group">
-        <label>Email</label>
-        <div class="input-wrapper">
-          <span class="icon">&#9993;</span>
-          <input type="email" placeholder="tu@email.com" formControlName="email">
-        </div>
-        <div class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">Introduce un email valido.</div>
-      </div>
+              <ion-item>
+                <ion-label position="stacked">Apellidos</ion-label>
+                <ion-input formControlName="lastName" placeholder="Apellidos"></ion-input>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.lastName.touched && form.controls.lastName.invalid">
+                Los apellidos deben tener al menos 2 caracteres.
+              </ion-note>
 
-      <div class="input-group">
-        <label>Contrasena</label>
-        <div class="input-wrapper">
-          <span class="icon">&#128274;</span>
-          <input [type]="showPassword ? 'text' : 'password'" placeholder="••••••••" formControlName="password">
-          <button type="button" class="toggle-password" (click)="showPassword = !showPassword">&#128065;</button>
-        </div>
-        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">La contrasena es obligatoria.</div>
-        <div class="error-text" *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">La contrasena debe tener al menos 6 caracteres.</div>
-      </div>
+              <ion-item>
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  formControlName="email"
+                  placeholder="usuario@correo.com">
+                </ion-input>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.email.touched && form.controls.email.invalid">
+                Introduce un email valido.
+              </ion-note>
 
-      <div class="input-group">
-        <label>Confirmar contrasena</label>
-        <div class="input-wrapper">
-          <span class="icon">&#128274;</span>
-          <input [type]="showConfirmPassword ? 'text' : 'password'" placeholder="••••••••" formControlName="confirmPassword">
-          <button type="button" class="toggle-password" (click)="showConfirmPassword = !showConfirmPassword">&#128065;</button>
-        </div>
-        <div class="error-text" *ngIf="form.controls.confirmPassword.touched && form.controls.confirmPassword.hasError('required')">Debes confirmar la contrasena.</div>
-      </div>
+              <ion-item>
+                <ion-label position="stacked">Contrasena</ion-label>
+                <ion-input
+                  [type]="showPassword ? 'text' : 'password'"
+                  autocomplete="new-password"
+                  formControlName="password"
+                  placeholder="Minimo 6 caracteres">
+                </ion-input>
+                <ion-button
+                  slot="end"
+                  fill="clear"
+                  type="button"
+                  (click)="showPassword = !showPassword">
+                  {{ showPassword ? 'Ocultar' : 'Mostrar' }}
+                </ion-button>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+                La contrasena debe tener al menos 6 caracteres.
+              </ion-note>
 
-      <div class="error-text" *ngIf="form.touched && form.errors?.['passwordMismatch']">Las contrasenas no coinciden.</div>
-      <div class="error-text" *ngIf="errorMessage">{{ errorMessage }}</div>
+              <ion-item>
+                <ion-label position="stacked">Confirmar contrasena</ion-label>
+                <ion-input
+                  [type]="showConfirmPassword ? 'text' : 'password'"
+                  autocomplete="new-password"
+                  formControlName="confirmPassword"
+                  placeholder="Repite la contrasena">
+                </ion-input>
+                <ion-button
+                  slot="end"
+                  fill="clear"
+                  type="button"
+                  (click)="showConfirmPassword = !showConfirmPassword">
+                  {{ showConfirmPassword ? 'Ocultar' : 'Mostrar' }}
+                </ion-button>
+              </ion-item>
+              <ion-note class="error-text" *ngIf="form.controls.confirmPassword.touched && form.controls.confirmPassword.invalid">
+                Debes confirmar la contrasena.
+              </ion-note>
+            </ion-list>
 
-      <button type="submit" class="register-btn" [disabled]="isSubmitting">
-        {{ isSubmitting ? 'Registrando...' : 'Registrarse' }}
-      </button>
-    </form>
+            <div class="file-block">
+              <label for="photo">Imagen de perfil</label>
+              <input id="photo" type="file" accept="image/*" (change)="onPhotoSelected($event)">
+              <ion-note class="error-text" *ngIf="form.controls.photo.touched && form.controls.photo.invalid">
+                La imagen es obligatoria.
+              </ion-note>
+            </div>
 
-    <p class="login-text">
-      ¿Ya tienes cuenta?
-      <a routerLink="/login" class="login-link">Inicia sesion</a>
-    </p>
-  </div>
+            <div class="preview-row" *ngIf="selectedPhotoPreview">
+              <ion-avatar>
+                <img [src]="selectedPhotoPreview" alt="Vista previa del perfil">
+              </ion-avatar>
+            </div>
+
+            <ion-text color="danger" *ngIf="form.touched && form.errors?.['passwordMismatch']">
+              <p class="feedback">Las contrasenas no coinciden.</p>
+            </ion-text>
+
+            <ion-text color="danger" *ngIf="errorMessage">
+              <p class="feedback">{{ errorMessage }}</p>
+            </ion-text>
+
+            <ion-button expand="block" type="submit" [disabled]="isSubmitting">
+              {{ isSubmitting ? 'Registrando...' : 'Crear cuenta' }}
+            </ion-button>
+
+            <p class="auth-link-row">
+              Ya tienes cuenta?
+              <a routerLink="/login">Inicia sesion</a>
+            </p>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
 </div>

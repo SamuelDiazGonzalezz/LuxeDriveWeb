@@ -1,41 +1,81 @@
-<main class="detalle-wrapper">
-  <a routerLink="/" fragment="coleccion" class="back-link">← Volver a Inicio</a>
+<div class="ion-page">
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/favoritos"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Detalle</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ng-container *ngIf="!loading && vehicle as coche; else fallback">
-    <div class="detalle-grid">
-      <div class="detalle-img">
-        <span class="badge">{{ coche.tipo }}</span>
-        <img [src]="coche.imagen" [alt]="coche.nombre">
+  <ion-content [fullscreen]="true">
+    <div class="detail-page">
+      <div class="loading-state" *ngIf="loading">
+        <ion-spinner name="crescent"></ion-spinner>
       </div>
 
-      <div class="detalle-info">
-        <h1>{{ coche.nombre }}</h1>
-        <h2 class="precio">{{ coche.precio }}</h2>
-
-        <p class="descripcion">{{ coche.descripcion }}</p>
-
-        <h3>Especificaciones Técnicas</h3>
-        <div class="spec-grid">
-          <div class="spec-card" *ngFor="let spec of coche.specs">
-            <span class="spec-title">{{ spec.titulo }}</span>
-            <span class="spec-value">{{ spec.valor }}</span>
+      <ng-container *ngIf="!loading && vehicle as coche; else fallback">
+        <div class="detail-grid">
+          <div class="image-panel">
+            <ion-badge color="warning">{{ coche.tipo }}</ion-badge>
+            <img [src]="coche.imagen" [alt]="coche.nombre">
           </div>
+
+          <ion-card class="info-card">
+            <ion-card-content>
+              <div class="title-row">
+                <div>
+                  <h1>{{ coche.nombre }}</h1>
+                  <p class="price">{{ coche.precio }}</p>
+                </div>
+                <ion-note>{{ isFavorite ? 'En favoritos' : 'No guardado' }}</ion-note>
+              </div>
+
+              <p class="description">{{ coche.descripcion }}</p>
+
+              <section>
+                <h2>Especificaciones</h2>
+                <div class="spec-grid">
+                  <div class="spec-card" *ngFor="let spec of coche.specs">
+                    <span>{{ spec.titulo }}</span>
+                    <strong>{{ spec.valor }}</strong>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2>Caracteristicas</h2>
+                <ul class="feature-list">
+                  <li *ngFor="let item of coche.caracteristicas">{{ item }}</li>
+                </ul>
+              </section>
+
+              <div class="action-row">
+                <ion-button
+                  color="warning"
+                  fill="outline"
+                  [class.favorite-pending]="favoritePending"
+                  [class.favorite-burst]="favoriteBurst"
+                  [disabled]="favoritePending"
+                  (click)="toggleFavorite()">
+                  {{ favoritePending ? 'Guardando...' : (isFavorite ? 'Quitar de favoritos' : 'Anadir a favoritos') }}
+                </ion-button>
+                <ion-button (click)="buyNow()">Comprar</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
         </div>
+      </ng-container>
 
-        <h3 class="caract-title">Características Destacadas</h3>
-        <ul class="caracteristicas">
-          <li *ngFor="let item of coche.caracteristicas">✔ {{ item }}</li>
-        </ul>
-
-        <button type="button" class="btn-detalle" (click)="buyNow()">Comprar</button>
-      </div>
+      <ng-template #fallback>
+        <ion-card class="fallback-card">
+          <ion-card-content>
+            <h2>Vehiculo no encontrado</h2>
+            <p>Vuelve a la coleccion y selecciona un elemento valido.</p>
+            <ion-button routerLink="/" fill="outline">Ir al inicio</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ng-template>
     </div>
-  </ng-container>
-
-  <ng-template #fallback>
-    <div class="detalle-error">
-      <h2>Vehículo no encontrado</h2>
-      <p>Vuelve a la colección y selecciona un coche válido.</p>
-    </div>
-  </ng-template>
-</main>
+  </ion-content>
+</div>

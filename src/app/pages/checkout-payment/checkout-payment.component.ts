@@ -8,7 +8,12 @@ import { Vehicle } from '../../models/vehicle.model';
 @Component({
   selector: 'app-checkout-payment',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, RouterLink, DecimalPipe],
+  imports: [
+    ReactiveFormsModule,
+    NgIf,
+    DecimalPipe,
+    RouterLink
+  ],
   templateUrl: './checkout-payment.component.html',
   styleUrl: './checkout-payment.component.css'
 })

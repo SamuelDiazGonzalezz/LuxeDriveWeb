@@ -25,6 +25,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "sql-wasm.wasm",
+                "input": "node_modules/sql.js/dist",
+                "output": "assets"
               }
             ],
             "styles": ["src/styles.css"]
@@ -34,8 +39,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1.3MB",
+                  "maximumError": "1.5MB"
                 },
                 {
                   "type": "anyComponentStyle",
