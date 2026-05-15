@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<ng-container *ngIf="content$ | async as content">
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">LuxeDrive</p>
+      <h1>{{ content.about.title }}</h1>
+      <p class="lead">{{ content.about.text }}</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-media">
+        <img [src]="content.about.image" [alt]="content.about.title">
+      </div>
+
+      <div class="about-copy">
+        <h2>Excelencia en seleccion y servicio</h2>
+        <div class="feature-list">
+          <article class="feature-item" *ngFor="let feature of content.about.features">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <div>
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<app-footer></app-footer>

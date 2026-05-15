@@ -1,0 +1,72 @@
+<div class="ion-page">
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-title>Favoritos</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/">Inicio</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="favorites-page">
+      <div class="page-intro">
+        <p class="eyebrow">Coleccion privada</p>
+        <h1>Tus favoritos guardados</h1>
+        <p>
+          Aqui solo aparecen los vehiculos que has marcado como favoritos y que se guardan en SQLite para tu cuenta.
+        </p>
+      </div>
+
+      <div class="cards-grid" *ngIf="vehiclesWithFavoriteState$ | async as vehicles">
+        <ng-container *ngIf="vehicles.length > 0; else emptyState">
+        <ion-card
+          class="vehicle-card"
+          *ngFor="let vehicle of vehicles"
+          [ngClass]="{ preferred: vehicle.isFavorite, removing: removingFavoriteIds.has(vehicle.id) }">
+          <img [src]="vehicle.imagen" [alt]="vehicle.nombre">
+
+          <ion-card-header>
+            <div class="card-top">
+              <ion-badge color="warning">Favorito</ion-badge>
+              <ion-note>{{ vehicle.tipo }}</ion-note>
+            </div>
+            <ion-card-title>{{ vehicle.nombre }}</ion-card-title>
+            <ion-card-subtitle>{{ vehicle.precio }}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p class="description">{{ vehicle.descripcion }}</p>
+
+            <ion-list lines="none" class="meta-list">
+              <ion-item *ngFor="let spec of vehicle.specs.slice(0, 2)">
+                <ion-label>
+                  <strong>{{ spec.titulo }}</strong>
+                  <p>{{ spec.valor }}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+
+            <div class="card-actions">
+              <ion-button [routerLink]="['/vehiculos', vehicle.id]">Ver detalle</ion-button>
+              <ion-button fill="outline" color="warning" [disabled]="pendingFavoriteIds.has(vehicle.id)" (click)="toggleFavorite(vehicle.id)">
+                {{ pendingFavoriteIds.has(vehicle.id) ? 'Quitando...' : 'Quitar' }}
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        </ng-container>
+
+        <ng-template #emptyState>
+          <div class="empty-state-card">
+            <p class="empty-state-title">Todavia no has guardado ningun coche.</p>
+            <p class="empty-state-copy">
+              Entra en el catalogo, marca tus modelos preferidos y volveran a aparecer aqui.
+            </p>
+            <ion-button routerLink="/vehiculos" color="warning">Ir al catalogo</ion-button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ion-content>
+</div>
