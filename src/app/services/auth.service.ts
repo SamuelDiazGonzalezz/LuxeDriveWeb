@@ -117,7 +117,7 @@ export class AuthService {
     lastName: string,
     email: string,
     password: string,
-    photoUrl: string | null
+    photoUrl: string | null = null
   ): Promise<{ success: boolean; message?: string }> {
     try {
       const credentials = await createUserWithEmailAndPassword(this.auth, email, password);

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="README img">
+    <list default="true" id="8c3e60e1-fd85-4302-92f6-133afd18f287" name="Changes" comment="android">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777377996188</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="android">
+      <option name="closed" value="true" />
+      <created>1779388390413</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779388390413</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +327,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/sprint4" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -342,6 +352,7 @@
     <MESSAGE value="Firebase-firestore detalles de los vehículos y sus características" />
     <MESSAGE value="README vfinal" />
     <MESSAGE value="README img" />
-    <option name="LAST_COMMIT_MESSAGE" value="README img" />
+    <MESSAGE value="android" />
+    <option name="LAST_COMMIT_MESSAGE" value="android" />
   </component>
 </project>

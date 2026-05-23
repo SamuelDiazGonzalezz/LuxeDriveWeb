@@ -92,19 +92,7 @@
               </ion-note>
             </ion-list>
 
-            <div class="file-block">
-              <label for="photo">Imagen de perfil</label>
-              <input id="photo" type="file" accept="image/*" (change)="onPhotoSelected($event)">
-              <ion-note class="error-text" *ngIf="form.controls.photo.touched && form.controls.photo.invalid">
-                La imagen es obligatoria.
-              </ion-note>
-            </div>
 
-            <div class="preview-row" *ngIf="selectedPhotoPreview">
-              <ion-avatar>
-                <img [src]="selectedPhotoPreview" alt="Vista previa del perfil">
-              </ion-avatar>
-            </div>
 
             <ion-text color="danger" *ngIf="form.touched && form.errors?.['passwordMismatch']">
               <p class="feedback">Las contrasenas no coinciden.</p>

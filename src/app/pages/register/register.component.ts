@@ -3,7 +3,6 @@ import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl, Validati
 import { NgIf } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
-  IonAvatar,
   IonBackButton,
   IonButton,
   IonButtons,
@@ -38,7 +37,6 @@ function passwordsMatch(group: AbstractControl): ValidationErrors | null {
     ReactiveFormsModule,
     NgIf,
     RouterLink,
-    IonAvatar,
     IonBackButton,
     IonButton,
     IonButtons,
@@ -71,7 +69,6 @@ export class RegisterComponent {
   showConfirmPassword = false;
   errorMessage = '';
   isSubmitting = false;
-  selectedPhotoPreview: string | null = null;
 
   form = this.fb.group(
     {
@@ -80,29 +77,11 @@ export class RegisterComponent {
       email: this.fb.nonNullable.control('', [Validators.required, Validators.email]),
       password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(6)]),
       confirmPassword: this.fb.nonNullable.control('', [Validators.required]),
-      photo: this.fb.nonNullable.control('', [Validators.required])
     },
     { validators: passwordsMatch }
   );
 
-  onPhotoSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const file = input.files?.[0];
 
-    if (!file) {
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = typeof reader.result === 'string' ? reader.result : '';
-      this.selectedPhotoPreview = result;
-      this.form.controls.photo.setValue(result);
-      this.form.controls.photo.markAsTouched();
-      this.form.controls.photo.updateValueAndValidity();
-    };
-    reader.readAsDataURL(file);
-  }
 
   async submit(): Promise<void> {
     this.errorMessage = '';
@@ -115,13 +94,12 @@ export class RegisterComponent {
     this.isSubmitting = true;
 
     try {
-      const { firstName, lastName, email, password, photo } = this.form.getRawValue();
+      const { firstName, lastName, email, password,  } = this.form.getRawValue();
       const result = await this.authService.register(
         firstName ?? '',
         lastName ?? '',
         email ?? '',
         password ?? '',
-        photo ?? null
       );
 
       if (!result.success) {
